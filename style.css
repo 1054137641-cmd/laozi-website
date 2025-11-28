@@ -1,0 +1,48 @@
+:root{
+  --bg:#0b0b08;
+  --paper:#f7f6f2;
+  --accent:#caa16b;
+  --muted:#9b9b9b;
+}
+*{box-sizing:border-box}
+body{
+  margin:0;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  color:var(--paper);
+  background: radial-gradient(circle at top right, #071118 0%, #071418 40%, #071014 100%), url('/assets/bg-mountain.png') no-repeat center/cover;
+}
+.wrap{max-width:1000px;margin:0 auto;padding:36px}
+.hero{
+  min-height:70vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  position:relative;
+  text-align:center;
+  padding:60px 20px;
+  background: linear-gradient(180deg, rgba(0,0,0,0.25), rgba(0,0,0,0.6));
+}
+.hero-inner{z-index:2}
+.laozi{width:160px;filter:drop-shadow(0 6px 18px rgba(0,0,0,.6))}
+h1{font-size:40px;margin:.2rem 0;color:var(--paper);letter-spacing:1px}
+.tag{color:var(--muted);margin:10px 0 24px}
+.cta-row .btn{display:inline-block;background:rgba(255,255,255,0.06);color:var(--paper);border:1px solid rgba(255,255,255,.06);padding:12px 20px;margin:6px;border-radius:8px;text-decoration:none}
+.cta-row .btn:hover{background:rgba(202,161,107,0.12);border-color:var(--accent)}
+.btn.ghost{background:transparent}
+.scroll-hint{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);color:#cfcfcf;opacity:.7}
+
+/* sections */
+.about{padding:60px 20px;background:linear-gradient(180deg, rgba(255,255,255,0.01), transparent)}
+.roadmap{padding:40px 20px}
+.roadmap ul{list-style:none;padding:0}
+.roadmap li{padding:8px 0;color:var(--muted)}
+
+/* learning cta */
+.learning-cta{ padding:40px 20px;border-top:1px solid rgba(255,255,255,.03);border-bottom:1px solid rgba(255,255,255,.03); text-align:center }
+.site-footer{padding:30px 20px;color:var(--muted);text-align:center}
+
+/* small screens */
+@media (max-width:640px){
+  h1{font-size:28px}
+  .laozi{width:110px}
+}
