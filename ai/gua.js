@@ -24,3 +24,6 @@ run.addEventListener('click', ()=>{
   hexImg.innerText = `${g.name}（示意图）`;
   out.style.display = 'block';
 });
+// 生成时填入当前时间与提交者 X 用户名占位（用户需在分享时备注）
+const time = new Date().toLocaleString();
+hexText.innerText = `生成于：${time}；卦象：${g.name}；建议：${g.hint}`;
