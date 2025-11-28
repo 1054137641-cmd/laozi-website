@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8" />
+  <title>老子卦机 · 免费体验</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <link rel="stylesheet" href="/style.css" />
+  <style>
+    .gua-wrap{max-width:700px;margin:40px auto;background:rgba(0,0,0,0.45);padding:20px;border-radius:10px}
+    label{display:block;margin:12px 0 6px;color:#ddd}
+    input,select,button{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,.06);background:transparent;color:#fff}
+    .result{margin-top:18px;padding:12px;background:rgba(255,255,255,0.03);border-radius:8px}
+    .hex-image{width:100%;height:280px;background:linear-gradient(180deg, rgba(202,161,107,0.06), rgba(0,0,0,0.2));display:flex;align-items:center;justify-content:center;color:#f6e9d6;font-size:22px}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <h2>老子卦机 · 免费体验（Beta）</h2>
+    <div class="gua-wrap">
+      <label>出生年份（示例：1998）</label>
+      <input id="birth" placeholder="例如 1998" />
+      <label>想测的币（例如：BTC / ETH）</label>
+      <input id="coin" placeholder="BTC" />
+      <button id="run">召唤老子卦机</button>
+
+      <div id="out" class="result" style="display:none">
+        <div class="hex-image" id="hexImg">卦象图（示例）</div>
+        <h3 id="hexTitle"></h3>
+        <p id="hexText"></p>
+        <p style="color:#cfcfcf;font-size:13px">截图卦象可参与空投 → TG 群：<a href="https://t.me/your_tg_group" target="_blank">加入领取</a></p>
+      </div>
+    </div>
+  </div>
+
+  <script src="/ai/gua.js"></script>
+</body>
+</html>
