@@ -1,80 +1,98 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="zh-CN">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>老子 · Laozi.biz — 卦机 & 学习天地</title>
-  <link rel="icon" href="/assets/favicon.ico" />
-  <link rel="stylesheet" href="/style.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laozi Web3 学院</title>
+
+    <!-- 网站图标 -->
+    <link rel="icon" href="assets/favicon.ico">
+
+    <!-- 样式文件 -->
+    <link rel="stylesheet" href="style.css">
 </head>
- <body>
-  <nav class="nav">
-    <div class="wrap nav-inner">
-     <div class="brand"><img src="/logo.png" alt="Laozi" /></div>
-      <div class="nav-links">
-        <a href="/">首页</a>
-        <a href="/ai/gua.html">卦机</a>
-        <a href="/learn/index.html">学习天地</a>
-        <a href="/airdrop.html">空投任务</a>
-        <a href="/contact.html">联系我们</a>
-      </div>
-    </div>
-  </nav>
+<body>
 
-  <header class="hero">
-    <div class="wrap hero-inner">
-      <div class="hero-left">
-        <h1>老子卦机 · Laozi Oracle</h1>
-        <p class="subtitle">链上有变，天机自明 — 用东方智慧看币市。</p>
-        <div class="hero-ctas">
-          <a class="btn primary" href="/ai/gua.html">立即免费测卦（Beta）</a>
-          <a class="btn" href="/airdrop.html">参与空投任务</a>
-          <a class="btn ghost" href="https://t.me/Binance_LaoZi" target="_blank">加入 TG 群</a>
+    <!-- 顶部导航 -->
+    <header>
+        <div class="container nav">
+            <img src="images/logo.png" class="logo" alt="Logo">
+            <nav>
+                <a href="#about">关于我们</a>
+                <a href="#airdrop">空投教程</a>
+                <a href="#courses">课程体系</a>
+                <a href="#contact">联系我们</a>
+            </nav>
         </div>
-      </div>
-      <div class="hero-right">
-        <img class="hero-art" src="/laozi.png" alt="Laozi" />
-      </div>
-    </div>
-  </header>
+    </header>
 
-  <main class="wrap main">
-    <section class="features">
-      <div class="col">
-        <h3>卦机 · AI 推演</h3>
-        <p>每日生成卦象 + 市场解读。免费体验版可生成文本与示意图。</p>
-      </div>
-      <div class="col">
-        <h3>学习天地</h3>
-        <p>道家与 Web3 学习资料、空投玩法、白皮书下载。</p>
-      </div>
-      <div class="col">
-        <h3>空投任务</h3>
-        <p>完成推特三连 + 卦机截图 + 邀请进群 → 有机会获得 LAO 兑现资格。</p>
-      </div>
+    <!-- Banner 轮播 -->
+    <section class="banner">
+        <div class="banner-box">
+            <img src="images/banner.jpg" class="banner-img" alt="Banner 1">
+            <img src="images/airdrop-banner.png" class="banner-img" alt="Banner 2">
+            <img src="images/bg.jpg" class="banner-img" alt="Banner 3">
+        </div>
     </section>
 
-    <section class="roadmap">
-      <h2>近期计划</h2>
-      <ul>
-        <li>卦机 1.0 → 文本体验（已上线）</li>
-        <li>卦机 2.0 → 出图 + 免费体验（今日升级）</li>
-        <li>卦机 3.0 → 持币解锁（下周）</li>
-        <li>官网/白皮书/CMC 提交</li>
-      </ul>
+    <!-- 英雄区 -->
+    <section class="hero">
+        <div class="container hero-flex">
+            <div class="hero-text">
+                <h1>开启你的 Web3 财富之路</h1>
+                <p>5 年 Web3 教培 · 20000+ 付费学员 · 3000+ 私域社群  
+                   链上 + 交易所空投双体系教学，一站式带你真正赚到美元。</p>
+                <a href="#airdrop" class="btn">开始学习空投</a>
+            </div>
+
+            <img src="images/laozi.png" class="hero-art" alt="Laozi Illustration">
+        </div>
     </section>
 
-    <section class="socials">
-      <h3>联络与社群</h3>
-      <p>TG 群：<a href="https://t.me/Binance_LaoZi" target="_blank">https://t.me/Binance_LaoZi</a> · X（推特）：<a href="https://x.com/BinanceLaozi" target="_blank">@BinanceLaozi</a></p>
+    <!-- 空投教学模块 -->
+    <section class="module" id="airdrop">
+        <div class="container">
+            <h2>空投赚钱体系</h2>
+            <div class="cards">
+                <div class="card">
+                    <h3>链上空投</h3>
+                    <p>手把手教你注册钱包、交互任务、完成项目路线，低成本薅到大毛。</p>
+                </div>
+                <div class="card">
+                    <h3>交易所空投</h3>
+                    <p>0 成本通过账号体系、返现套利、活动任务实现可持续收益。</p>
+                </div>
+                <div class="card">
+                    <h3>返现套利系统</h3>
+                    <p>打造返现机器人矩阵，日撸几百、周入上万不是梦。</p>
+                </div>
+            </div>
+        </div>
     </section>
-  </main>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>© 2025 Laozi · laozi.biz — 道在链上</p>
-    </div>
-  </footer>
-<script src="/script.js"></script>
+    <!-- 课程体系 -->
+    <section class="module" id="courses">
+        <div class="container">
+            <h2>课程体系</h2>
+            <ul class="list">
+                <li>⚡ Web3 小白入门 - 一小时看懂行业</li>
+                <li>🧭 全套空投训练营流程与 SOP</li>
+                <li>🧩 项目判断模型、筛选方法</li>
+                <li>📈 社群运营体系：裂变、转化、IP 打造</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 联系板块 -->
+    <footer id="contact">
+        <div class="container">
+            <h3>联系我们</h3>
+            <p>添加微信：laozi-web3</p>
+            <p>版权所有 © 2025 Laozi Web3 学院</p>
+        </div>
+    </footer>
+
+    <!-- JS 文件 -->
+    <script src="script.js"></script>
 </body>
 </html>
