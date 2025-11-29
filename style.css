@@ -5,12 +5,36 @@
   --muted:#b6b6b6;
 }
 *{box-sizing:border-box}
-body{margin:0;font-family:"Noto Serif SC","Songti SC",serif;background:linear-gradient(#020202,#071014);color:var(--paper)}
-.wrap{max-width:1100px;margin:0 auto;padding:24px}
-.nav{background:rgba(0,0,0,0.3);backdrop-filter:blur(6px)}
-.nav-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-.nav-links a{color:var(--paper);margin-left:18px;text-decoration:none}
-.brand img{height:40px}
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: "Noto Serif SC", "Songti SC", serif;
+  background: 
+    linear-gradient(135deg, #0b1320 0%, #1a2332 50%, #0f1419 100%),
+    radial-gradient(circle at 30% 70%, rgba(100, 130, 180, 0.15) 0%, transparent 70%),
+    radial-gradient(circle at 70% 30%, rgba(180, 140, 80, 0.1) 0%, transparent 70%);
+  background-attachment: fixed;
+  color: var(--paper);
+  min-height: 100vh;
+}
+
+/* 道家动态烟雾层 */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: repeating-radial-gradient(circle at 50% 50%, transparent 0, rgba(255,215,0,0.03) 100px);
+  opacity: 0.4;
+  pointer-events: none;
+  animation: mist 180s linear infinite;
+  z-index: -1;
+}
+
+@keyframes mist {
+  0%   { transform: translate(0, 0) rotate(0deg); }
+  100% { transform: translate(50px, 30px) rotate(5deg); }
+}
 
 .hero{padding:48px 0;display:flex;align-items:center}
 .hero-inner{display:flex;align-items:center;justify-content:space-between}
