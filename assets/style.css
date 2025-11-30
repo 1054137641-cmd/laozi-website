@@ -1,67 +1,68 @@
-/* Reset */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%}
-body{font-family: "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;background:#06060a;color:#f3efe6;line-height:1.6}
+/* 统一按钮样式 */
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-/* container */
-.container{max-width:1100px;margin:0 auto;padding:20px}
+/* 按钮悬停效果 */
+.btn:hover {
+    background-color: #e0b36b;
+    color: #111;
+}
 
-/* header */
-.site-header{background:linear-gradient(90deg,rgba(0,0,0,0.55),rgba(10,8,6,0.4));border-bottom:1px solid rgba(255,255,255,0.03)}
-.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
-.brand{display:flex;align-items:center;gap:12px}
-.logo{height:46px}
-.brand-name{font-weight:800;color:#f9e7c0}
-.brand-tag{font-size:12px;color:#bfb6a7}
-.main-nav a{color:#efeadd;margin-left:18px;text-decoration:none;font-weight:600}
+/* 使 hero 区域的内容垂直居中 */
+.hero-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 50px;
+}
 
-/* hero */
-.hero{position:relative;padding:64px 0;overflow:hidden}
-.hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,6,0.8),rgba(3,3,3,0.8));z-index:0}
-/* subtle decorative: can replace with background image */
-.hero-inner{position:relative;z-index:2;display:flex;gap:28px;align-items:center}
-.hero-left{flex:1;min-width:260px}
-.hero-right{flex:0 0 420px}
-.hero-title{font-size:44px;color:#fff;margin-bottom:10px}
-.accent{color:#e0b36b}
-.hero-sub{color:#d6cdb6;margin-bottom:18px}
-.hero-ctas{display:flex;gap:12px;margin-bottom:12px}
-.btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:800}
-.btn-primary{background:linear-gradient(90deg,#e0b36b,#ffd88a);color:#111}
-.btn-outline{border:2px solid rgba(255,255,255,0.06);color:#efeadd;background:transparent}
-.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.05);color:#efeadd}
+/* 图片优化 */
+.hero-left img,
+.hero-right img,
+.oracle-card img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;
+}
 
-/* oracle card */
-.oracle-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:14px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,0.6);display:flex;gap:12px;align-items:center}
-.oracle-art{width:110px;height:110px;object-fit:cover;border-radius:10px}
-.oracle-info h3{margin-bottom:6px}
-.quick-links{display:flex;flex-direction:column;gap:8px;margin-top:12px}
-.quick{display:block;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:8px;text-decoration:none;color:#efeadd;margin-top:8px}
+/* 按钮设计 */
+.btn {
+    padding: 12px 24px;
+    border-radius: 8px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-block;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
 
-/* main grid */
-.main-grid{display:grid;grid-template-columns:1fr 360px;gap:20px;padding:28px 0}
-.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
-.responsive{width:100%;height:auto;border-radius:10px}
-.roadmap{margin-top:12px;display:flex;flex-direction:column;gap:8px}
-.rm-item{background:rgba(255,255,255,0.02);padding:10px;border-radius:8px}
+/* 响应式：优化在小屏设备上的显示 */
+@media (max-width: 768px) {
+    .hero-inner {
+        flex-direction: column;
+        padding: 20px;
+    }
 
-/* page helpers */
-.page-card{max-width:900px;margin:36px auto}
-.mini-header{background:linear-gradient(90deg,rgba(0,0,0,0.45),rgba(10,8,6,0.3));padding:12px}
-.back{color:#efeadd;text-decoration:none;font-weight:700}
-.page-title{color:#efeadd;font-weight:800;text-align:center}
+    .hero-title {
+        font-size: 24px;
+    }
 
-/* forms */
-input[type="text"], select, textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:#efeadd;margin-top:8px}
+    .hero-sub {
+        font-size: 16px;
+    }
 
-/* footer */
-.site-footer{padding:28px 0;border-top:1px solid rgba(255,255,255,0.02);text-align:center;color:#c9c0aa;font-size:14px}
+    .main-grid {
+        display: block;
+    }
 
-/* responsiveness */
-@media (max-width:980px){
-  .main-grid{grid-template-columns:1fr}
-  .hero-inner{flex-direction:column;align-items:center;text-align:center}
-  .hero-right{width:100%}
-  .logo{height:40px}
-  .main-nav{display:none}
+    .card {
+        margin-bottom: 20px;
+    }
 }
