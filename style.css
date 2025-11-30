@@ -1,68 +1,76 @@
-/* 统一按钮样式 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --gold: #d4af37;
+  --paper: #f7f6f2;
+  --ink: #0f1419;
+  --mist: rgba(255,255,255,0.06);
+}
+body {
+  font-family: "Noto Serif SC", Georgia, serif;
+  background: #f8f6f0 url('/images/bg.jpg') center/cover fixed;
+  color: #333;
+  line-height: 1.7;
+  min-height: 100vh;
+}
+.wrap { max-width: 1240px; margin: 0 auto; padding: 0 20px; }
+
+/* 导航 */
+.nav {
+  background: rgba(15,20,25,0.85);
+  backdrop-filter: blur(12px);
+  position: sticky; top: 0; z-index: 100;
+  padding: 16px 0;
+}
+.nav-inner { display: flex; align-items: center; justify-content: space-between; }
+.brand img { height: 48px; }
+.nav-links a {
+  color: var(--paper); margin-left: 32px; text-decoration: none; font-weight: 500;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+/* Hero */
+.hero {
+  padding: 120px 0 160px;
+  background: linear-gradient(rgba(15,20,25,0.7), rgba(15,20,25,0.9)), url('/images/banner.jpg') center/cover no-repeat;
+  color: var(--paper);
+  text-align: center;
+}
+.hero h1 { font-size: 56px; margin-bottom: 16px; }
+.subtitle { font-size: 22px; margin: 24px 0 40px; opacity: 0.9; }
+.hero-ctas { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 .btn {
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease, color 0.3s ease;
+  padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s;
 }
+.btn.primary { background: linear-gradient(90deg, #f4d03f, var(--gold)); color: #000; }
+.btn.primary:hover { transform: translateY(-4px); box-shadow: 0 12px 30px rgba(212,175,55,0.4); }
+.btn.ghost { border: 1px solid var(--gold); color: var(--gold); }
+.btn.ghost:hover { background: rgba(212,175,55,0.15); }
+.hero-art { max-width: 380px; margin-top: 40px; }
 
-/* 按钮悬停效果 */
-.btn:hover {
-    background-color: #e0b36b;
-    color: #111;
+/* 卡片 */
+.features {
+  display: flex; gap: 32px; padding: 80px 0; flex-wrap: wrap; justify-content: center;
 }
-
-/* 使 hero 区域的内容垂直居中 */
-.hero-inner {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    text-align: center;
-    padding: 50px;
+.features .col {
+  flex: 1; min-width: 300px; background: rgba(15,20,25,0.75); padding: 40px 32px;
+  border-radius: 16px; border: 1px solid rgba(212,175,55,0.2); backdrop-filter: blur(8px);
 }
+.features h3 { color: var(--gold); font-size: 24px; margin-bottom: 16px; }
 
-/* 图片优化 */
-.hero-left img,
-.hero-right img,
-.oracle-card img {
-    max-width: 100%;
-    height: auto;
-    object-fit: contain;
+/* 其他区块 */
+.roadmap, .socials {
+  background: rgba(15,20,25,0.75); padding: 60px 40px; border-radius: 16px;
+  margin: 60px 0; text-align: center; border: 1px solid rgba(212,175,55,0.2);
 }
+.roadmap h2, .socials h3 { color: var(--gold); margin-bottom: 32px; }
+.socials a { color: var(--gold); text-decoration: none; }
+.socials a:hover { text-decoration: underline; }
 
-/* 按钮设计 */
-.btn {
-    padding: 12px 24px;
-    border-radius: 8px;
-    font-weight: 600;
-    text-decoration: none;
-    display: inline-block;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
+.site-footer { text-align: center; padding: 60px 0; color: #888; font-size: 14px; }
 
-/* 响应式：优化在小屏设备上的显示 */
+/* 响应式 */
 @media (max-width: 768px) {
-    .hero-inner {
-        flex-direction: column;
-        padding: 20px;
-    }
-
-    .hero-title {
-        font-size: 24px;
-    }
-
-    .hero-sub {
-        font-size: 16px;
-    }
-
-    .main-grid {
-        display: block;
-    }
-
-    .card {
-        margin-bottom: 20px;
-    }
+  .hero h1 { font-size: 42px; }
+  .hero-ctas { flex-direction: column; align-items: center; }
+  .features { flex-direction: column; padding: 40px 0; }
 }
