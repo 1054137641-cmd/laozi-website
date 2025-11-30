@@ -1,32 +1,61 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>老子卦机 - Laozi Oracle</title>
-  <link rel="stylesheet" href="/style.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>老子卦机 · Laozi Oracle</title>
+  <link rel="stylesheet" href="style.css"/>
+  <link rel="icon" href="assets/favicon.ico"/>
 </head>
 <body>
-  <nav class="nav">
-    <div class="wrap nav-inner">
-      <a href="/" class="active">首页</a>
-      <a href="/airdrop.html">空投任务</a>
-      <a href="/contact.html">联系我们</a>
-    </div>
-  </nav>
-
-  <header class="hero">
-    <div class="wrap hero-inner">
-      <h1>老子卦机 2.0</h1>
-      <p>AI + 易经 · 实时推演今日链市卦象，支持出图分享。</p>
-      <button>开始卦机</button>
+  <header class="mini-header">
+    <div class="container">
+      <a href="index.html" class="back">← 返回首页</a>
+      <div class="page-title">老子卦机 2.0</div>
     </div>
   </header>
 
-  <footer class="site-footer">
-    <div class="wrap">
-      <p>© 2025 Laozi · laozi.biz</p>
-    </div>
-  </footer>
+  <main class="container page-card">
+    <section class="card">
+      <h1>免费体验：老子卦机</h1>
+      <p>输入问题或选择“今日运势”，AI 将为你推演卦象并生成国风运势图（可分享到推特）。</p>
+
+      <label>请选择类型：</label>
+      <select id="gua-type">
+        <option value="today">今日运势</option>
+        <option value="trade">交易决策</option>
+        <option value="personal">个人币运</option>
+      </select>
+
+      <label>输入你想问的问题（可选）</label>
+      <input id="gua-question" type="text" placeholder="例如：ETH 今天能不能反弹？" />
+
+      <div style="margin-top:12px;">
+        <button class="btn btn-primary" id="run-gua">开一卦 / 生成图</button>
+        <button class="btn btn-ghost" id="sample-gua">示例卦象</button>
+      </div>
+
+      <div id="gua-result" class="gua-result" style="margin-top:18px;"></div>
+    </section>
+  </main>
+
+  <footer class="site-footer"><div class="container">© 2025 Laozi</div></footer>
+
+<script>
+const sampleTexts = [
+  "卦象：泰初有变。建议：轻仓观望，等待确认。",
+  "卦象：震动未止。建议：降低仓位，寻机而动。",
+  "卦象：天地合，短线有机，守候确认后再入。"
+];
+document.getElementById('sample-gua')?.addEventListener('click', ()=>{
+  document.getElementById('gua-result').innerText = sampleTexts[Math.floor(Math.random()*sampleTexts.length)];
+});
+document.getElementById('run-gua')?.addEventListener('click', ()=>{
+  const type = document.getElementById('gua-type').value;
+  const q = document.getElementById('gua-question').value || '今日运势';
+  document.getElementById('gua-result').innerText = `正在为您推演 —— 【${type}】 ${q}\n（示例）卦象：泰中带险。建议：小仓探入，止损严格。`;
+  // TODO: 这里可接后端 AI 生成/出图接口
+});
+</script>
 </body>
 </html>
