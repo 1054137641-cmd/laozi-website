@@ -1,95 +1,95 @@
-* { 
-  box-sizing: border-box; 
-  margin: 0; 
-  padding: 0; 
-}
-
+* { box-sizing: border-box; margin: 0; padding: 0; }
 :root {
-  --gold: #d4af37;
-  --paper: #f7f6f2;
-  --ink: #f8f6f0;  
-  --mist: rgba(120, 119, 198, 0.05);  
+  --gold: #d4af37; /* 金色，玄学点缀 */
+  --paper: #f9f7f2; /* 米白底，留白道家感 */
+  --ink: #4a5568; /* 深灰文字 */
+  --mist: rgba(120, 119, 198, 0.03); /* 淡青雾，神秘不抢镜 */
 }
-
 body {
   font-family: "Noto Serif SC", Georgia, serif;
-  background: var(--ink) url('/images/bg.jpg') center/cover fixed;
-  color: #333;
-  line-height: 1.6;
+  background: var(--paper) url('/images/bg.jpg') center/cover fixed; /* 淡水墨背景，柔和 */
+  color: var(--ink);
+  line-height: 1.7;
   min-height: 100vh;
 }
+.wrap { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
 
-/* 导航栏样式 */
+/* 导航 - 简约金边 */
 .nav {
-  background: rgba(248,246,240,0.95);
-  backdrop-filter: blur(12px);
+  background: rgba(249,247,242,0.95); /* 浅米白，优雅 */
+  backdrop-filter: blur(10px);
   position: sticky; top: 0; z-index: 100;
-  padding: 16px 0; border-bottom: 1px solid rgba(212,175,55,0.1);
+  padding: 16px 0; border-bottom: 1px solid rgba(212,175,55,0.15);
 }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; }
-.brand img { height: 40px; width: auto; }  
+.brand img { height: 42px; width: auto; } /* Logo 固定大小 */
+.nav-links { display: flex; gap: 32px; } /* gap 间距，防挤 */
 .nav-links a {
-  color: #333; margin-left: 32px; text-decoration: none; font-weight: 500; font-size: 16px;
+  color: var(--ink); text-decoration: none; font-weight: 500; font-size: 16px;
 }
 .nav-links a:hover, .nav-links a.active { color: var(--gold); }
 
-/* Hero 区块样式 */
+/* Hero - 图片限高 + 留白 */
 .hero {
-  padding: 80px 0 120px;  
-  background: linear-gradient(rgba(248,246,240,0.8), rgba(248,246,240,0.9)), url('/images/banner.jpg') center/cover no-repeat;
-  color: #333; text-align: center; position: relative;
+  padding: 100px 0 140px; /* 适中 padding，避免拉长 */
+  background: linear-gradient(rgba(249,247,242,0.85), rgba(249,247,242,0.95)), 
+              url('/images/banner.jpg') center/contain no-repeat; /* contain 防变形，限高 */
+  color: var(--ink); text-align: center; position: relative;
+  min-height: 60vh; max-height: 80vh; /* 高度限 80vh，防巨大 */
 }
-.hero::before {
+.hero::before { /* 淡雾玄学层 */
   content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
   background: var(--mist); z-index: 1;
 }
 .hero-inner { position: relative; z-index: 2; }
-.hero h1 { font-size: 48px; margin-bottom: 16px; line-height: 1.2; }  
-.subtitle { font-size: 18px; margin: 20px 0 40px; opacity: 0.9; }
-.hero-ctas { display: flex; gap: 16px; justify-content: center; flex-wrap: wrap; }
+.hero h1 { font-size: 52px; margin-bottom: 16px; line-height: 1.2; } /* 标题适中 */
+.subtitle { font-size: 20px; margin: 24px 0 48px; opacity: 0.9; max-width: 600px; margin-left: auto; margin-right: auto; }
+.hero-ctas { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
 .btn {
-  padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: 0.3s; font-size: 16px;
+  padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; transition: 0.3s; font-size: 16px;
 }
-.btn.primary { background: linear-gradient(90deg, #f4d03f, var(--gold)); color: #000; }
+.btn.primary { background: linear-gradient(90deg, var(--gold), #f4d03f); color: #000; box-shadow: 0 4px 12px rgba(212,175,55,0.2); }
 .btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(212,175,55,0.3); }
 .btn.ghost { border: 1px solid var(--gold); color: var(--gold); }
 .btn.ghost:hover { background: rgba(212,175,55,0.1); }
-.hero-art { width: 100%; max-width: 400px; height: auto; margin-top: 40px; border-radius: 12px; }
+.hero-art { max-width: 300px; max-height: 350px; height: auto; margin-top: 40px; border-radius: 12px; box-shadow: 0 8px 24px rgba(0,0,0,0.1); } /* 图片限高 350px */
 
-/* 卡片区块样式 */
+/* 卡片 - 间距 + 尺寸控制 */
 .features {
-  display: flex; gap: 24px; padding: 60px 0; flex-wrap: wrap; justify-content: center;
+  display: flex; gap: 32px; padding: 80px 0; flex-wrap: wrap; justify-content: center; /* gap 32px，留白 */
 }
 .features .col {
-  flex: 1; min-width: 280px; max-width: 360px; 
-  background: rgba(248,246,240,0.95); padding: 32px;
-  border-radius: 12px; border: 1px solid rgba(212,175,55,0.2); box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  background-size: cover; background-position: center; min-height: 200px;
+  flex: 1; min-width: 280px; max-width: 380px; /* 宽度限 380px，防挤 */
+  background: rgba(249,247,242,0.95); padding: 32px; /* 浅底，干净 */
+  border-radius: 12px; border: 1px solid rgba(212,175,55,0.15); box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  background-size: cover; background-position: center; min-height: 220px; max-height: 280px; /* 图片限高 280px，防巨大 */
+  display: flex; flex-direction: column; justify-content: center; /* 文字居中 */
 }
-.features h3 { color: var(--gold); font-size: 22px; margin-bottom: 12px; text-align: center; }
-.features p { font-size: 15px; text-align: center; color: #555; }
+.features h3 { color: var(--gold); font-size: 24px; margin-bottom: 12px; text-align: center; }
+.features p { font-size: 15px; text-align: center; color: #666; line-height: 1.5; }
 
-/* 其他区块样式 */
+/* 其他区块 - 统一留白 */
 .roadmap, .socials {
-  background: rgba(248,246,240,0.95); padding: 48px; border-radius: 12px;
-  margin: 48px 0; text-align: center; border: 1px solid rgba(212,175,55,0.2);
+  background: rgba(249,247,242,0.95); padding: 48px; border-radius: 12px;
+  margin: 60px 0; text-align: center; border: 1px solid rgba(212,175,55,0.15);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
 }
 .roadmap h2, .socials h3 { color: var(--gold); margin-bottom: 24px; font-size: 28px; }
-.roadmap ul { max-width: 600px; margin: 0 auto; text-align: left; }
-.roadmap li { padding: 8px 0; border-bottom: 1px solid rgba(0,0,0,0.1); }
+.roadmap ul { max-width: 600px; margin: 0 auto; text-align: left; list-style: none; }
+.roadmap li { padding: 12px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
 .socials a { color: var(--gold); text-decoration: none; font-weight: 500; }
 .socials a:hover { text-decoration: underline; }
 
-.site-footer { text-align: center; padding: 40px 0; color: #888; font-size: 14px; border-top: 1px solid rgba(0,0,0,0.1); }
+.site-footer { text-align: center; padding: 48px 0; color: #888; font-size: 14px; border-top: 1px solid rgba(0,0,0,0.05); }
 
-/* 响应式 - 手机端修复 */
+/* 响应式 - 手机端防乱 */
 @media (max-width: 768px) {
-  .nav-links { flex-wrap: wrap; gap: 16px; justify-content: center; }
-  .hero { padding: 60px 0 80px; }
+  .nav-links { gap: 20px; justify-content: center; font-size: 14px; }
+  .hero { padding: 60px 0 80px; min-height: 50vh; }
   .hero h1 { font-size: 36px; }
-  .hero-ctas { flex-direction: column; align-items: center; gap: 12px; }
-  .hero-art { max-width: 280px; max-height: 300px; }
-  .features { flex-direction: column; gap: 20px; padding: 40px 0; }
-  .features .col { max-width: 100%; min-height: 180px; }
-  .roadmap, .socials { padding: 32px 20px; margin: 32px 0; }
+  .hero-ctas { flex-direction: column; gap: 12px; }
+  .hero-art { max-width: 260px; max-height: 300px; }
+  .features { flex-direction: column; gap: 24px; padding: 40px 0; }
+  .features .col { max-width: 100%; min-height: 200px; max-height: 240px; } /* 手机限高 240px */
+  .roadmap, .socials { padding: 32px 16px; margin: 40px 0; }
 }
