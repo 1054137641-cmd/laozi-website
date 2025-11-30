@@ -1,109 +1,67 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --black: #0a0a0a; /* 深黑底，ACT 风格 */
-  --gold: #f4d03f; /* 金渐变 */
-  --white: #ffffff;
-  --mist: rgba(244, 208, 63, 0.1); /* 金雾 */
-}
-body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-  background: var(--black);
-  color: var(--white);
-  line-height: 1.6;
-  min-height: 100vh;
-}
-.wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+/* Reset */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%}
+body{font-family: "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;background:#06060a;color:#f3efe6;line-height:1.6}
 
-/* 导航 - ACT 简约黑金 */
-.nav {
-  background: rgba(10,10,10,0.95);
-  backdrop-filter: blur(20px);
-  position: fixed; top: 0; width: 100%; z-index: 100;
-  padding: 16px 0;
-}
-.nav .wrap { display: flex; justify-content: space-between; align-items: center; }
-.brand img { height: 32px; }
-.nav-links { display: flex; gap: 40px; }
-.nav-links a { color: var(--white); text-decoration: none; font-weight: 500; transition: color 0.3s; }
-.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+/* container */
+.container{max-width:1100px;margin:0 auto;padding:20px}
 
-/* Hero - ACT 英雄区：限高 + 渐变 */
-.hero {
-  padding: 120px 0 80px; /* 适中，留白 */
-  background: linear-gradient(135deg, var(--black) 0%, rgba(244,208,63,0.05) 100%);
-  text-align: center;
-  min-height: 60vh;
-}
-.hero h1 { font-size: 64px; font-weight: 300; margin-bottom: 16px; letter-spacing: -0.02em; }
-.subtitle { font-size: 20px; opacity: 0.8; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto; }
-.hero-ctas { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
-.btn {
-  padding: 16px 32px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s;
-  font-size: 16px;
-}
-.btn.primary { background: linear-gradient(90deg, var(--gold), #e6b800); color: var(--black); box-shadow: 0 8px 24px rgba(244,208,63,0.3); }
-.btn.primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(244,208,63,0.4); }
-.btn.secondary { border: 1px solid var(--gold); color: var(--gold); }
-.btn.secondary:hover { background: var(--gold); color: var(--black); }
+/* header */
+.site-header{background:linear-gradient(90deg,rgba(0,0,0,0.55),rgba(10,8,6,0.4));border-bottom:1px solid rgba(255,255,255,0.03)}
+.header-inner{display:flex;align-items:center;justify-content:space-between;padding:12px 0}
+.brand{display:flex;align-items:center;gap:12px}
+.logo{height:46px}
+.brand-name{font-weight:800;color:#f9e7c0}
+.brand-tag{font-size:12px;color:#bfb6a7}
+.main-nav a{color:#efeadd;margin-left:18px;text-decoration:none;font-weight:600}
 
-/* 卡片 - ACT 网格 3 列 */
-.features {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; padding: 80px 0;
-}
-.card {
-  background: rgba(255,255,255,0.05); padding: 40px 24px; border-radius: 16px; text-align: center;
-  border: 1px solid rgba(244,208,63,0.2); backdrop-filter: blur(10px); transition: 0.3s;
-}
-.card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(244,208,63,0.1); }
-.card img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 24px; }
-.card h3 { font-size: 28px; margin-bottom: 16px; color: var(--gold); }
-.card p { opacity: 0.8; margin-bottom: 24px; }
-.btn-link { color: var(--gold); text-decoration: none; font-weight: 500; }
-.btn-link:hover { text-decoration: underline; }
+/* hero */
+.hero{position:relative;padding:64px 0;overflow:hidden}
+.hero-bg{position:absolute;inset:0;background:linear-gradient(180deg,rgba(10,8,6,0.8),rgba(3,3,3,0.8));z-index:0}
+/* subtle decorative: can replace with background image */
+.hero-inner{position:relative;z-index:2;display:flex;gap:28px;align-items:center}
+.hero-left{flex:1;min-width:260px}
+.hero-right{flex:0 0 420px}
+.hero-title{font-size:44px;color:#fff;margin-bottom:10px}
+.accent{color:#e0b36b}
+.hero-sub{color:#d6cdb6;margin-bottom:18px}
+.hero-ctas{display:flex;gap:12px;margin-bottom:12px}
+.btn{display:inline-block;padding:12px 18px;border-radius:10px;text-decoration:none;font-weight:800}
+.btn-primary{background:linear-gradient(90deg,#e0b36b,#ffd88a);color:#111}
+.btn-outline{border:2px solid rgba(255,255,255,0.06);color:#efeadd;background:transparent}
+.btn-ghost{background:transparent;border:1px solid rgba(255,255,255,0.05);color:#efeadd}
 
-/* 路标 - ACT 时间线 */
-.roadmap {
-  padding: 80px 0; text-align: center; background: rgba(255,255,255,0.02);
-}
-.roadmap h2 { font-size: 40px; margin-bottom: 60px; color: var(--white); }
-.roadmap-grid {
-  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto;
-}
-.roadmap-item {
-  position: relative; padding-left: 40px; text-align: left; opacity: 0.8;
-}
-.roadmap-item::before {
-  content: ''; position: absolute; left: 0; top: 0; width: 32px; height: 32px; background: var(--gold); border-radius: 50%; z-index: 1;
-}
-.roadmap-item .step { position: absolute; left: 4px; top: 4px; color: var(--black); font-weight: bold; z-index: 2; }
-.roadmap-item p { margin-top: 8px; }
+/* oracle card */
+.oracle-card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:14px;border-radius:14px;box-shadow:0 8px 30px rgba(0,0,0,0.6);display:flex;gap:12px;align-items:center}
+.oracle-art{width:110px;height:110px;object-fit:cover;border-radius:10px}
+.oracle-info h3{margin-bottom:6px}
+.quick-links{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.quick{display:block;padding:8px 10px;background:rgba(255,255,255,0.02);border-radius:8px;text-decoration:none;color:#efeadd;margin-top:8px}
 
-/* 社群 - ACT 按钮组 */
-.socials {
-  padding: 80px 0; text-align: center; background: rgba(255,255,255,0.02);
-}
-.socials h2 { font-size: 40px; margin-bottom: 48px; color: var(--white); }
-.social-links { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
-.social-btn {
-  padding: 16px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 18px; transition: 0.3s;
-  border: 1px solid var(--gold); color: var(--gold);
-}
-.social-btn:hover { background: var(--gold); color: var(--black); transform: translateY(-2px); }
-.social-btn.tg { border-color: #0088cc; color: #0088cc; }
-.social-btn.tg:hover { background: #0088cc; }
-.social-btn.x { border-color: #1da1f2; color: #1da1f2; }
-.social-btn.x:hover { background: #1da1f2; }
+/* main grid */
+.main-grid{display:grid;grid-template-columns:1fr 360px;gap:20px;padding:28px 0}
+.card{background:linear-gradient(180deg,rgba(255,255,255,0.02),rgba(255,255,255,0.01));padding:18px;border-radius:12px;border:1px solid rgba(255,255,255,0.02)}
+.responsive{width:100%;height:auto;border-radius:10px}
+.roadmap{margin-top:12px;display:flex;flex-direction:column;gap:8px}
+.rm-item{background:rgba(255,255,255,0.02);padding:10px;border-radius:8px}
 
-/* 页脚 - ACT 简洁 */
-.footer { padding: 40px 0; text-align: center; color: rgba(255,255,255,0.6); border-top: 1px solid rgba(255,255,255,0.1); }
+/* page helpers */
+.page-card{max-width:900px;margin:36px auto}
+.mini-header{background:linear-gradient(90deg,rgba(0,0,0,0.45),rgba(10,8,6,0.3));padding:12px}
+.back{color:#efeadd;text-decoration:none;font-weight:700}
+.page-title{color:#efeadd;font-weight:800;text-align:center}
 
-/* 响应式 - ACT 手机端流畅 */
-@media (max-width: 768px) {
-  .nav-links { gap: 20px; }
-  .hero h1 { font-size: 40px; }
-  .hero-ctas { flex-direction: column; gap: 16px; }
-  .features { grid-template-columns: 1fr; gap: 32px; padding: 60px 0; }
-  .roadmap-grid { grid-template-columns: 1fr; gap: 32px; }
-  .social-links { flex-direction: column; gap: 20px; }
-  .social-btn { width: 100%; max-width: 300px; }
+/* forms */
+input[type="text"], select, textarea{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.06);background:rgba(255,255,255,0.02);color:#efeadd;margin-top:8px}
+
+/* footer */
+.site-footer{padding:28px 0;border-top:1px solid rgba(255,255,255,0.02);text-align:center;color:#c9c0aa;font-size:14px}
+
+/* responsiveness */
+@media (max-width:980px){
+  .main-grid{grid-template-columns:1fr}
+  .hero-inner{flex-direction:column;align-items:center;text-align:center}
+  .hero-right{width:100%}
+  .logo{height:40px}
+  .main-nav{display:none}
 }
