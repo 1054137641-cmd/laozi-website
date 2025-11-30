@@ -3,85 +3,98 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>老子 · Laozi.biz — 道家 MEME 风格</title>
-  <link rel="icon" href="/images/favicon.ico" type="image/x-icon" />
+  <title>老子 · Laozi.biz — 卦机 & 学习天地</title>
+  <link rel="icon" href="/images/favicon.ico" />
   <link rel="stylesheet" href="/style.css" />
 </head>
 <body>
-  <!-- 侧边导航栏 -->
   <nav class="nav">
-    <div class="wrap nav-inner">
+    <div class="wrap">
       <div class="brand">
         <img src="/images/logo.png" alt="Laozi" />
       </div>
       <div class="nav-links">
         <a href="/" class="active">首页</a>
-        <a href="/airdrop.html">空投任务</a>
-        <a href="/divination.html">老子卦机</a>
-        <a href="/contact.html">联系我们</a>
+        <a href="/airdrop.html">空投</a>
+        <a href="/divination.html">卦机</a>
+        <a href="/contact.html">联系</a>
       </div>
     </div>
   </nav>
 
-  <!-- Hero 区块 -->
-  <header class="hero" style="background-image: url('/images/banner.jpg');">
-    <div class="wrap hero-inner">
-      <div class="hero-left">
+  <header class="hero">
+    <div class="wrap">
+      <div class="hero-content">
         <h1>老子卦机 · Laozi Oracle</h1>
         <p class="subtitle">链上有变，天机自明 — 用东方智慧看币市。</p>
         <div class="hero-ctas">
-          <a class="btn primary" href="/divination.html">立即免费测卦（Beta）</a>
-          <a class="btn" href="/airdrop.html">参与空投任务</a>
-          <a class="btn ghost" href="https://t.me/Binance_LaoZi" target="_blank">加入 TG 群</a>
+          <a class="btn primary" href="/divination.html">立即免费测卦</a>
+          <a class="btn secondary" href="/airdrop.html">参与空投</a>
         </div>
       </div>
-      <div class="hero-right">
-        <img class="hero-art" src="/images/laozi.png" alt="老子" />
+      <div class="hero-art">
+        <img src="/images/laozi.png" alt="老子" />
       </div>
     </div>
   </header>
 
-  <!-- 主内容区域 -->
-  <main class="wrap main">
+  <main class="wrap">
     <section class="features">
-      <div class="col">
+      <div class="card">
+        <img src="/images/card-gua.jpg" alt="卦机" />
         <h3>卦机 · AI 推演</h3>
-        <p>每日生成卦象 + 市场解读，免费体验版已上线。</p>
+        <p>每日生成卦象 + 市场解读。免费体验版可生成文本与示意图。</p>
+        <a href="/divination.html" class="btn-link">探索更多</a>
       </div>
-      <div class="col">
+      <div class="card">
+        <img src="/images/card-book.jpg" alt="学习" />
         <h3>学习天地</h3>
-        <p>道家与 Web3 学习资料、白皮书下载、链上哲学。</p>
+        <p>道家与 Web3 学习资料、空投玩法、白皮书下载。</p>
+        <a href="/learn/index.html" class="btn-link">开始学习</a>
       </div>
-      <div class="col">
+      <div class="card">
+        <img src="/images/card-airdrop.jpg" alt="空投" />
         <h3>空投任务</h3>
-        <p>推特三连 + 截图 + 邀请 → 瓜分 LAO 空投奖励。</p>
+        <p>完成推特三连 + 卦机截图 + 邀请进群 → 有机会获得 LAO 兑现资格。</p>
+        <a href="/airdrop.html" class="btn-link">立即参与</a>
       </div>
     </section>
 
     <section class="roadmap">
       <h2>近期计划</h2>
-      <ul>
-        <li>卦机 1.0 → 文本体验（已上线）</li>
-        <li>卦机 2.0 → 出图 + 免费体验（今日升级）</li>
-        <li>卦机 3.0 → 持币解锁（下周）</li>
-        <li>官网/白皮书/CMC 提交</li>
-      </ul>
+      <div class="roadmap-grid">
+        <div class="roadmap-item">
+          <span class="step">1</span>
+          <p>卦机 1.0 → 文本体验（已上线）</p>
+        </div>
+        <div class="roadmap-item">
+          <span class="step">2</span>
+          <p>卦机 2.0 → 出图 + 免费体验（今日升级）</p>
+        </div>
+        <div class="roadmap-item">
+          <span class="step">3</span>
+          <p>卦机 3.0 → 持币解锁（下周）</p>
+        </div>
+        <div class="roadmap-item">
+          <span class="step">4</span>
+          <p>官网/白皮书/CMC 提交</p>
+        </div>
+      </div>
     </section>
 
     <section class="socials">
-      <h3>联络与社群</h3>
-      <p>
-        TG 群：<a href="https://t.me/Binance_LaoZi" target="_blank">t.me/Binance_LaoZi</a> · 
-        X（推特）：<a href="https://x.com/BinanceLaozi" target="_blank">@BinanceLaozi</a>
-      </p>
+      <h2>加入社群</h2>
+      <div class="social-links">
+        <a href="https://t.me/Binance_LaoZi" target="_blank" class="social-btn tg">TG 群</a>
+        <a href="https://x.com/BinanceLaozi" target="_blank" class="social-btn x">X @BinanceLaozi</a>
+      </div>
     </section>
   </main>
 
-  <footer class="site-footer">
+  <footer class="footer">
     <div class="wrap">
-      <p>© 2025 Laozi · laozi.biz — 道在链上</p>
+      <p>&copy; 2025 Laozi · laozi.biz — 道在链上</p>
     </div>
   </footer>
-  <script src="/script.js"></script>
 </body>
 </html>
