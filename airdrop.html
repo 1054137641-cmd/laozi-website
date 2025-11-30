@@ -1,34 +1,54 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="zh-CN">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>空投任务 - Laozi</title>
-  <link rel="stylesheet" href="/style.css" />
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>空投挑战 · 币安老子</title>
+  <link rel="icon" href="assets/favicon.ico"/>
+  <link rel="stylesheet" href="style.css"/>
 </head>
 <body>
-  <nav class="nav">
-    <div class="wrap nav-inner">
-      <a href="/" class="active">首页</a>
-      <a href="/divination.html">老子卦机</a>
-      <a href="/contact.html">联系我们</a>
+  <header class="mini-header">
+    <div class="container">
+      <a href="index.html" class="back">← 返回首页</a>
+      <div class="page-title">老子八字空投挑战</div>
     </div>
-  </nav>
+  </header>
 
-  <main class="wrap">
-    <h1>空投任务</h1>
-    <p>参与空投任务并完成以下步骤：</p>
-    <ul>
-      <li>推特三连</li>
-      <li>截图上传</li>
-      <li>邀请任务</li>
-    </ul>
+  <main class="container page-card">
+    <section class="card">
+      <h1>参与方式（简洁版）</h1>
+      <ol class="task-list">
+        <li><strong>推特三连：</strong>点赞 / 转发置顶推 / 评论“Follow the Dao, not the FOMO.”</li>
+        <li><strong>加入 TG 群：</strong>t.me/Binance_LaoZi</li>
+        <li><strong>打开卦机：</strong>生成今日运势并截图</li>
+        <li><strong>分享：</strong>把截图发到推特并 @3 位好友</li>
+        <li><strong>提交：</strong>填写下面表单并上传截图</li>
+      </ol>
+
+      <h2>提交表单（示例）</h2>
+      <form id="airdrop-form">
+        <label>钱包地址</label>
+        <input type="text" id="wallet" placeholder="例如：0xAbC..."/>
+        <label>推特链接</label>
+        <input type="text" id="tweet" placeholder="推文链接"/>
+        <label>上传截图（证明）</label>
+        <input type="file" id="proof"/>
+        <button class="btn btn-primary" type="button" id="submit-airdrop">提交登记</button>
+      </form>
+
+      <p class="note">注：首次空投优先审核，作弊者取消资格。</p>
+    </section>
   </main>
 
   <footer class="site-footer">
-    <div class="wrap">
-      <p>© 2025 Laozi · laozi.biz</p>
-    </div>
+    <div class="container">© 2025 币安老子</div>
   </footer>
+
+<script>
+document.getElementById('submit-airdrop')?.addEventListener('click', ()=>{
+  alert('示例表单：请把文件上传到你的后端或 Google Form（此处为示例）。');
+});
+</script>
 </body>
 </html>
