@@ -1,65 +1,109 @@
-/* Hero 区块样式 */
+* { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --black: #0a0a0a; /* 深黑底，ACT 风格 */
+  --gold: #f4d03f; /* 金渐变 */
+  --white: #ffffff;
+  --mist: rgba(244, 208, 63, 0.1); /* 金雾 */
+}
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: var(--black);
+  color: var(--white);
+  line-height: 1.6;
+  min-height: 100vh;
+}
+.wrap { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+
+/* 导航 - ACT 简约黑金 */
+.nav {
+  background: rgba(10,10,10,0.95);
+  backdrop-filter: blur(20px);
+  position: fixed; top: 0; width: 100%; z-index: 100;
+  padding: 16px 0;
+}
+.nav .wrap { display: flex; justify-content: space-between; align-items: center; }
+.brand img { height: 32px; }
+.nav-links { display: flex; gap: 40px; }
+.nav-links a { color: var(--white); text-decoration: none; font-weight: 500; transition: color 0.3s; }
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+/* Hero - ACT 英雄区：限高 + 渐变 */
 .hero {
-  padding: 80px 0 120px;  
-  background: linear-gradient(rgba(248,246,240,0.8), rgba(248,246,240,0.9)), url('/images/banner.jpg') center/cover no-repeat;
-  color: #333; text-align: center; position: relative;
+  padding: 120px 0 80px; /* 适中，留白 */
+  background: linear-gradient(135deg, var(--black) 0%, rgba(244,208,63,0.05) 100%);
+  text-align: center;
+  min-height: 60vh;
 }
-
-.hero::before {
-  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
-  background: var(--mist); z-index: 1;
+.hero h1 { font-size: 64px; font-weight: 300; margin-bottom: 16px; letter-spacing: -0.02em; }
+.subtitle { font-size: 20px; opacity: 0.8; margin-bottom: 48px; max-width: 600px; margin-left: auto; margin-right: auto; }
+.hero-ctas { display: flex; gap: 24px; justify-content: center; flex-wrap: wrap; }
+.btn {
+  padding: 16px 32px; border-radius: 50px; text-decoration: none; font-weight: 600; transition: 0.3s;
+  font-size: 16px;
 }
+.btn.primary { background: linear-gradient(90deg, var(--gold), #e6b800); color: var(--black); box-shadow: 0 8px 24px rgba(244,208,63,0.3); }
+.btn.primary:hover { transform: translateY(-2px); box-shadow: 0 12px 32px rgba(244,208,63,0.4); }
+.btn.secondary { border: 1px solid var(--gold); color: var(--gold); }
+.btn.secondary:hover { background: var(--gold); color: var(--black); }
 
-.hero-inner { position: relative; z-index: 2; }
-
-.hero h1 { 
-  font-size: 48px; 
-  margin-bottom: 16px; 
-  line-height: 1.2; 
-}
-
-.subtitle { 
-  font-size: 18px; 
-  margin: 20px 0 40px; 
-  opacity: 0.9; 
-}
-
-.hero-ctas { 
-  display: flex; 
-  gap: 16px; 
-  justify-content: center; 
-  flex-wrap: wrap; 
-}
-
-.hero-art {
-  width: 100%;
-  max-width: 400px;  
-  height: auto; 
-  margin-top: 40px; 
-  border-radius: 12px; 
-  object-fit: cover;  
-}
-
-/* 卡片区块样式 */
+/* 卡片 - ACT 网格 3 列 */
 .features {
-  display: flex; gap: 24px; padding: 60px 0; flex-wrap: wrap; justify-content: center;
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 40px; padding: 80px 0;
 }
-.features .col {
-  flex: 1; min-width: 280px; max-width: 360px;
-  background: rgba(248,246,240,0.95); padding: 32px;
-  border-radius: 12px; border: 1px solid rgba(212,175,55,0.2); box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-  background-size: cover; background-position: center; min-height: 200px;
+.card {
+  background: rgba(255,255,255,0.05); padding: 40px 24px; border-radius: 16px; text-align: center;
+  border: 1px solid rgba(244,208,63,0.2); backdrop-filter: blur(10px); transition: 0.3s;
 }
-.features h3 { color: var(--gold); font-size: 22px; margin-bottom: 12px; text-align: center; }
-.features p { font-size: 15px; text-align: center; color: #555; }
+.card:hover { transform: translateY(-4px); box-shadow: 0 16px 40px rgba(244,208,63,0.1); }
+.card img { width: 100%; height: 200px; object-fit: cover; border-radius: 12px; margin-bottom: 24px; }
+.card h3 { font-size: 28px; margin-bottom: 16px; color: var(--gold); }
+.card p { opacity: 0.8; margin-bottom: 24px; }
+.btn-link { color: var(--gold); text-decoration: none; font-weight: 500; }
+.btn-link:hover { text-decoration: underline; }
 
-/* 响应式设计 */
+/* 路标 - ACT 时间线 */
+.roadmap {
+  padding: 80px 0; text-align: center; background: rgba(255,255,255,0.02);
+}
+.roadmap h2 { font-size: 40px; margin-bottom: 60px; color: var(--white); }
+.roadmap-grid {
+  display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 40px; max-width: 1000px; margin: 0 auto;
+}
+.roadmap-item {
+  position: relative; padding-left: 40px; text-align: left; opacity: 0.8;
+}
+.roadmap-item::before {
+  content: ''; position: absolute; left: 0; top: 0; width: 32px; height: 32px; background: var(--gold); border-radius: 50%; z-index: 1;
+}
+.roadmap-item .step { position: absolute; left: 4px; top: 4px; color: var(--black); font-weight: bold; z-index: 2; }
+.roadmap-item p { margin-top: 8px; }
+
+/* 社群 - ACT 按钮组 */
+.socials {
+  padding: 80px 0; text-align: center; background: rgba(255,255,255,0.02);
+}
+.socials h2 { font-size: 40px; margin-bottom: 48px; color: var(--white); }
+.social-links { display: flex; gap: 32px; justify-content: center; flex-wrap: wrap; }
+.social-btn {
+  padding: 16px 40px; border-radius: 50px; text-decoration: none; font-weight: 600; font-size: 18px; transition: 0.3s;
+  border: 1px solid var(--gold); color: var(--gold);
+}
+.social-btn:hover { background: var(--gold); color: var(--black); transform: translateY(-2px); }
+.social-btn.tg { border-color: #0088cc; color: #0088cc; }
+.social-btn.tg:hover { background: #0088cc; }
+.social-btn.x { border-color: #1da1f2; color: #1da1f2; }
+.social-btn.x:hover { background: #1da1f2; }
+
+/* 页脚 - ACT 简洁 */
+.footer { padding: 40px 0; text-align: center; color: rgba(255,255,255,0.6); border-top: 1px solid rgba(255,255,255,0.1); }
+
+/* 响应式 - ACT 手机端流畅 */
 @media (max-width: 768px) {
-  .hero { padding: 60px 0 80px; }
-  .hero h1 { font-size: 36px; }
-  .hero-ctas { flex-direction: column; align-items: center; gap: 12px; }
-  .hero-art { max-width: 280px; max-height: 300px; }
-  .features { flex-direction: column; gap: 20px; padding: 40px 0; }
-  .features .col { max-width: 100%; min-height: 180px; }
-  .roadmap, .socials { padding: 32px 20px; margin: 32px 0; }
+  .nav-links { gap: 20px; }
+  .hero h1 { font-size: 40px; }
+  .hero-ctas { flex-direction: column; gap: 16px; }
+  .features { grid-template-columns: 1fr; gap: 32px; padding: 60px 0; }
+  .roadmap-grid { grid-template-columns: 1fr; gap: 32px; }
+  .social-links { flex-direction: column; gap: 20px; }
+  .social-btn { width: 100%; max-width: 300px; }
 }
