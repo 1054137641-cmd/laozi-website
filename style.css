@@ -1,92 +1,213 @@
-* { box-sizing: border-box; margin: 0; padding: 0; }
+* { 
+  box-sizing: border-box; 
+  margin: 0; 
+  padding: 0; 
+}
+
 :root {
   --gold: #d4af37;
-  --paper: #f9f7f2; /* 米白底，道家留白 */
-  --ink: #4a5568; /* 深灰文字 */
-  --mist: rgba(120,119,198,0.04); /* 淡青雾 */
+  --paper: #f7f6f2;
+  --ink: #f8f6f0;  
+  --mist: rgba(120, 119, 198, 0.05);  
 }
+
 body {
   font-family: "Noto Serif SC", Georgia, serif;
-  background: var(--paper) url('/images/bg.jpg') center/cover fixed;
-  color: var(--ink);
-  line-height: 1.7;
+  background: var(--ink) url('/images/bg.jpg') center/cover fixed;
+  color: #333;
+  line-height: 1.6;
   min-height: 100vh;
+  padding: 0 20px;
 }
-.wrap { max-width: 1280px; margin: 0 auto; padding: 0 24px; }
 
-/* 导航 - 简约 */
+.wrap { 
+  max-width: 1240px; 
+  margin: 0 auto; 
+}
+
+/* 导航栏样式 */
 .nav {
-  background: rgba(249,247,242,0.95);
-  backdrop-filter: blur(10px);
+  background: rgba(248,246,240,0.95);
+  backdrop-filter: blur(12px);
   position: sticky; top: 0; z-index: 100;
   padding: 16px 0; border-bottom: 1px solid rgba(212,175,55,0.1);
 }
-.nav-inner { display: flex; align-items: center; justify-content: space-between; }
-.brand img { height: 40px; width: auto; }
-.nav-links { display: flex; gap: 32px; }
+.nav-inner { 
+  display: flex; 
+  align-items: center; 
+  justify-content: space-between; 
+}
+.brand img { 
+  height: 40px; 
+  width: auto; 
+}  
 .nav-links a {
-  color: var(--ink); text-decoration: none; font-weight: 500;
+  color: #333; 
+  margin-left: 32px; 
+  text-decoration: none; 
+  font-weight: 500; 
+  font-size: 16px;
 }
-.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+.nav-links a:hover, .nav-links a.active { 
+  color: var(--gold); 
+}
 
-/* Hero - 限高 + 单次渲染 */
+/* Hero 区块样式 */
 .hero {
-  padding: 80px 0 120px;
-  background: linear-gradient(rgba(249,247,242,0.85), rgba(249,247,242,0.95)), 
-              url('/images/banner.jpg') center/contain no-repeat; /* contain 防重复拉伸 */
-  color: var(--ink); text-align: center; position: relative;
-  min-height: 60vh; max-height: 70vh; /* 限高 70vh，防巨大 */
+  padding: 80px 0 120px;  
+  background: linear-gradient(rgba(248,246,240,0.8), rgba(248,246,240,0.9)), url('/images/banner.jpg') center/cover no-repeat;
+  color: #333; text-align: center; position: relative;
 }
-.hero::before { content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0; background: var(--mist); z-index: 1; }
-.hero-inner { position: relative; z-index: 2; display: flex; align-items: center; justify-content: space-between; gap: 40px; flex-wrap: wrap; } /* flex-wrap 防挤 */
-.hero-content { flex: 1; max-width: 600px; }
-.hero h1 { font-size: 48px; margin-bottom: 16px; line-height: 1.2; }
+.hero::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; bottom: 0;
+  background: var(--mist); z-index: 1;
+}
+.hero-inner { position: relative; z-index: 2; }
+.hero h1 { font-size: 48px; margin-bottom: 16px; line-height: 1.2; }  
 .subtitle { font-size: 18px; margin: 20px 0 40px; opacity: 0.9; }
-.hero-ctas { display: flex; gap: 16px; flex-wrap: wrap; justify-content: center; }
-.btn {
-  padding: 12px 24px; border-radius: 6px; text-decoration: none; font-weight: 600; transition: 0.3s;
+.hero-ctas { 
+  display: flex; 
+  gap: 16px; 
+  justify-content: center; 
+  flex-wrap: wrap; 
 }
-.btn.primary { background: linear-gradient(90deg, var(--gold), #f4d03f); color: #000; }
-.btn.primary:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(212,175,55,0.3); }
-.btn.ghost { border: 1px solid var(--gold); color: var(--gold); }
-.btn.ghost:hover { background: rgba(212,175,55,0.1); }
-.hero-art { flex-shrink: 0; max-width: 280px; max-height: 320px; height: auto; border-radius: 12px; } /* 限高 320px，防巨大 */
+.btn {
+  padding: 12px 24px; 
+  border-radius: 6px; 
+  text-decoration: none; 
+  font-weight: 600; 
+  transition: 0.3s; 
+  font-size: 16px;
+}
+.btn.primary { 
+  background: linear-gradient(90deg, #f4d03f, var(--gold)); 
+  color: #000; 
+}
+.btn.primary:hover { 
+  transform: translateY(-2px); 
+  box-shadow: 0 8px 20px rgba(212,175,55,0.3); 
+}
+.btn.ghost { 
+  border: 1px solid var(--gold); 
+  color: var(--gold); 
+}
+.btn.ghost:hover { 
+  background: rgba(212,175,55,0.1); 
+}
+.hero-art { 
+  width: 100%; 
+  max-width: 400px; 
+  height: auto; 
+  margin-top: 40px; 
+  border-radius: 12px; 
+}
 
-/* 卡片 - 去重复 + 间距 */
+/* 卡片区块样式 */
 .features {
-  display: flex; gap: 24px; padding: 60px 0; flex-wrap: wrap; justify-content: center; /* gap 24px，防挤重复 */
+  display: flex; 
+  gap: 24px; 
+  padding: 60px 0; 
+  flex-wrap: wrap; 
+  justify-content: center;
 }
 .features .col {
-  flex: 1; min-width: 280px; max-width: 360px; /* 限宽 360px */
-  background: rgba(249,247,242,0.95); padding: 32px; border-radius: 12px;
-  border: 1px solid rgba(212,175,55,0.2); box-shadow: 0 4px 12px rgba(0,0,0,0.08);
-  background-size: cover; background-position: center; min-height: 200px; max-height: 240px; /* 限高 240px，防拉伸重复 */
-  display: flex; flex-direction: column; justify-content: center; /* 文字居中，防乱 */
+  flex: 1; 
+  min-width: 280px; 
+  max-width: 360px; 
+  background: rgba(248,246,240,0.95); 
+  padding: 32px;
+  border-radius: 12px; 
+  border: 1px solid rgba(212,175,55,0.2); 
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+  background-size: cover; 
+  background-position: center; 
+  min-height: 200px;
 }
-.features h3 { color: var(--gold); font-size: 22px; margin-bottom: 12px; text-align: center; }
-.features p { font-size: 15px; text-align: center; color: #666; line-height: 1.5; }
+.features h3 { 
+  color: var(--gold); 
+  font-size: 22px; 
+  margin-bottom: 12px; 
+  text-align: center; 
+}
+.features p { 
+  font-size: 15px; 
+  text-align: center; 
+  color: #555; 
+}
 
-/* 其他 - 统一留白 */
+/* 其他区块样式 */
 .roadmap, .socials {
-  background: rgba(249,247,242,0.95); padding: 48px; border-radius: 12px;
-  margin: 48px 0; text-align: center; border: 1px solid rgba(212,175,55,0.2);
+  background: rgba(248,246,240,0.95); 
+  padding: 48px; 
+  border-radius: 12px;
+  margin: 48px 0; 
+  text-align: center; 
+  border: 1px solid rgba(212,175,55,0.2);
 }
-.roadmap h2, .socials h3 { color: var(--gold); margin-bottom: 24px; font-size: 26px; }
-.roadmap ul { max-width: 600px; margin: 0 auto; text-align: left; list-style: none; padding-left: 0; }
-.roadmap li { padding: 10px 0; border-bottom: 1px solid rgba(0,0,0,0.05); }
-.socials a { color: var(--gold); text-decoration: none; font-weight: 500; }
-.socials a:hover { text-decoration: underline; }
+.roadmap h2, .socials h3 { 
+  color: var(--gold); 
+  margin-bottom: 24px; 
+  font-size: 28px; 
+}
+.roadmap ul { 
+  max-width: 600px; 
+  margin: 0 auto; 
+  text-align: left; 
+}
+.roadmap li { 
+  padding: 8px 0; 
+  border-bottom: 1px solid rgba(0,0,0,0.1); 
+}
+.socials a { 
+  color: var(--gold); 
+  text-decoration: none; 
+  font-weight: 500; 
+}
+.socials a:hover { 
+  text-decoration: underline; 
+}
 
-.site-footer { text-align: center; padding: 40px 0; color: #888; font-size: 14px; border-top: 1px solid rgba(0,0,0,0.05); }
+.site-footer { 
+  text-align: center; 
+  padding: 40px 0; 
+  color: #888; 
+  font-size: 14px; 
+  border-top: 1px solid rgba(0,0,0,0.1); 
+}
 
-/* 响应式 - 防重复乱排 */
+/* 响应式 - 手机端修复 */
 @media (max-width: 768px) {
-  .nav-links { gap: 16px; justify-content: center; flex-wrap: wrap; } /* 手机防挤 */
-  .hero { padding: 60px 0 80px; min-height: 50vh; flex-direction: column; text-align: center; }
-  .hero-inner { flex-direction: column; gap: 20px; }
-  .hero h1 { font-size: 36px; }
-  .hero-art { max-width: 250px; max-height: 280px; order: -1; } /* 手机图在上 */
-  .features { flex-direction: column; gap: 20px; padding: 40px 0; }
-  .features .col { max-width: 100%; min-height: 180px; max-height: 220px; } /* 手机限高 */
-  .roadmap, .socials { padding: 32px 16px; margin: 32px 0; }
+  .nav-links { 
+    flex-wrap: wrap; 
+    gap: 16px; 
+    justify-content: center; 
+  }
+  .hero { 
+    padding: 60px 0 80px; 
+  }
+  .hero h1 { 
+    font-size: 36px; 
+  }
+  .hero-ctas { 
+    flex-direction: column; 
+    align-items: center; 
+    gap: 12px; 
+  }
+  .hero-art { 
+    max-width: 280px; 
+    max-height: 300px; 
+  }
+  .features { 
+    flex-direction: column; 
+    gap: 20px; 
+    padding: 40px 0; 
+  }
+  .features .col { 
+    max-width: 100%; 
+    min-height: 180px; 
+  }
+  .roadmap, .socials { 
+    padding: 32px 20px; 
+    margin: 32px 0; 
+  }
 }
