@@ -328,3 +328,124 @@ html, body {
   position: static !important;
   max-width: 100% !important;
 }
+/* ================= 全站 2-5 屏 结构强制校准 ================= */
+
+/* 所有非第一屏 section 统一为中轴纵向结构 */
+.screen.section {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: flex-start !important;
+  padding: 180px 0 !important;
+}
+
+.section-inner {
+  width: 100% !important;
+  max-width: 1200px !important;
+  margin: 0 auto !important;
+  padding: 0 40px !important;
+}
+
+/* 标题统一风格（不再漂移、不再乱飞） */
+.section-title {
+  font-size: 56px !important;
+  text-align: center !important;
+  margin-bottom: 36px !important;
+  letter-spacing: 2px !important;
+  position: static !important;
+  transform: none !important;
+}
+
+.section-subtitle {
+  font-size: 20px !important;
+  text-align: center !important;
+  max-width: 900px !important;
+  margin: 0 auto 80px auto !important;
+  opacity: 0.85 !important;
+  position: static !important;
+  transform: none !important;
+}
+
+/* 所有段落恢复正常阅读宽度 */
+.section p,
+.section li {
+  font-size: 18px !important;
+  line-height: 1.85 !important;
+ max-width: 900px !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  position: static !important;
+}
+
+/* ================= 卦机屏单独修复 ================= */
+.section-oracle .oracle-layout {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 80px !important;
+  align-items: flex-start !important;
+}
+
+.section-oracle .oracle-left,
+.section-oracle .oracle-right {
+  position: static !important;
+  transform: none !important;
+}
+
+/* ================= 关于世界观 修复 ================= */
+.section-about .about-columns {
+  display: grid !important;
+  grid-template-columns: 1fr 1fr !important;
+  gap: 80px !important;
+  margin-bottom: 100px !important;
+}
+
+.section-about .about-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2,1fr) !important;
+  gap: 48px !important;
+}
+
+/* ================= 路线图 修复 ================= */
+.section-roadmap .roadmap-steps {
+  display: flex !important;
+  flex-direction: column !important;
+  gap: 52px !important;
+}
+
+/* ================= 空投 + 联系 修复 ================= */
+.section-airdrop .airdrop-grid {
+  display: grid !important;
+  grid-template-columns: repeat(3,1fr) !important;
+  gap: 52px !important;
+}
+
+.section-airdrop .airdrop-actions {
+  margin-top: 90px !important;
+  display: flex !important;
+  justify-content: center !important;
+  gap: 48px !important;
+}
+
+/* ================= 所有卡片防止炸裂 ================= */
+.about-card,
+.airdrop-card,
+.road-item,
+.step-card {
+  position: static !important;
+  transform: none !important;
+  width: 100% !important;
+}
+
+/* ================= 防止任何横向漂移 ================= */
+.section * {
+  max-width: 100%;
+}
+
+/* ================= 响应式安全补丁 ================= */
+@media (max-width: 980px) {
+  .section-oracle .oracle-layout,
+  .section-about .about-columns,
+  .section-about .about-grid,
+  .section-airdrop .airdrop-grid {
+    grid-template-columns: 1fr !important;
+  }
+}
