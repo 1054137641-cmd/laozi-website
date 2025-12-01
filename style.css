@@ -14,24 +14,31 @@ html,body{
   line-height:1.7;
 }
 
-/* container */
+/* container：默认内容区 1100 宽 */
 .container{
   max-width:1100px;
   margin:0 auto;
   padding:20px;
 }
 
-/* header */
+/* ==================  HEADER  ================== */
+
 .site-header{
   background:linear-gradient(90deg,rgba(0,0,0,.55),rgba(10,8,6,.4));
   border-bottom:1px solid rgba(255,255,255,.05);
-  padding-top:30px;
   position:relative;
+}
+
+/* 只在头部把 container 放大成全宽，这样 logo 能贴近左边 */
+.site-header .container{
+  max-width:100%;
+  padding:18px 32px 24px; /* 左右 32px，视觉上接近最左 */
 }
 
 .header-inner{
   display:flex;
   align-items:center;
+  position:relative; /* 给 nav 的 absolute 当参照 */
 }
 
 .brand{
@@ -57,11 +64,11 @@ html,body{
   color:#bfb6a7;
 }
 
-/* nav 居中 */
+/* 顶部导航：整体页面居中 */
 .main-nav{
   position:absolute;
   left:50%;
-  top:30px;
+  top:10px;              /* 稍微靠下，避免太贴边 */
   transform:translateX(-50%);
   display:flex;
 }
@@ -73,7 +80,8 @@ html,body{
   font-weight:600;
 }
 
-/* hero */
+/* ==================  HERO  ================== */
+
 .hero{
   position:relative;
   padding:80px 0;
@@ -105,7 +113,6 @@ html,body{
   flex:0 0 360px;
 }
 
-/* hero texts */
 .hero-title{
   font-size:56px;
   margin-bottom:10px;
@@ -135,7 +142,7 @@ html,body{
   color:#d6cdb6;
 }
 
-/* buttons */
+/* 按钮 */
 .btn{
   display:inline-block;
   padding:12px 20px;
@@ -144,29 +151,25 @@ html,body{
   font-weight:800;
   transition:all .25s ease;
 }
-
 .btn:hover{
   transform:scale(1.05);
   filter:brightness(1.05);
 }
-
 .btn-primary{
   background:linear-gradient(90deg,#e0b36b,#ffd88a);
   color:#111;
 }
-
 .btn-outline{
   border:1px solid rgba(255,255,255,.4);
   color:#efeadd;
   background:transparent;
 }
-
 .btn-ghost{
   border:1px dashed rgba(255,255,255,.35);
   color:#efeadd;
 }
 
-/* 卦机卡片 + 快捷链接 */
+/* 卦机卡片 + 快捷入口 */
 .oracle-card{
   background:rgba(0,0,0,.7);
   padding:16px;
@@ -204,7 +207,8 @@ html,body{
   color:#efeadd;
 }
 
-/* main layout */
+/* ================== 主体布局 ================== */
+
 .main-grid{
   display:grid;
   grid-template-columns:1fr 340px;
@@ -212,7 +216,6 @@ html,body{
   margin-top:40px;
 }
 
-/* cards */
 .card{
   background:rgba(0,0,0,.75);
   padding:26px;
@@ -220,25 +223,23 @@ html,body{
   border:1px solid rgba(255,255,255,.05);
   transition:transform .25s ease,box-shadow .25s ease;
 }
-
 .card:hover{
   transform:translateY(-4px);
   box-shadow:0 12px 38px rgba(0,0,0,.8);
 }
 
-/* 关于老子 */
+/* 关于币安老子 */
 .about-title{
   font-size:38px;
   margin-bottom:18px;
 }
-
 .about-desc{
   font-size:18px;
   color:#d6cdb6;
   margin-bottom:26px;
 }
 
-/* 三功能卡片区 */
+/* 功能三卡片 */
 .function-cards{
   display:grid;
   grid-template-columns:repeat(3,1fr);
@@ -252,34 +253,31 @@ html,body{
   padding:18px;
   text-align:center;
 }
-
 .card-item h3{
   color:#f6c46d;
   font-size:20px;
   margin-bottom:10px;
 }
-
 .card-item p{
   font-size:14px;
   color:#d6cdb6;
   margin-bottom:14px;
 }
 
-/* roadmap */
+/* 路线图 */
 .roadmap{
   display:flex;
   flex-direction:column;
   gap:10px;
   margin-top:12px;
 }
-
 .rm-item{
   background:rgba(255,255,255,.04);
   padding:10px 12px;
   border-radius:10px;
 }
 
-/* airdrop image */
+/* 右侧图片 */
 .responsive{
   width:100%;
   height:auto;
@@ -296,7 +294,8 @@ html,body{
   font-size:14px;
 }
 
-/* mobile */
+/* ================== 响应式 ================== */
+
 @media(max-width:980px){
   .main-nav{display:none;}
   .hero-inner{flex-direction:column;align-items:flex-start;}
