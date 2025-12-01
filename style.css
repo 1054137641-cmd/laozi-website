@@ -8,7 +8,7 @@
 html, body {
   height: 100%;
   font-family: "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
-  background: url('images/d66b275c-b942-45fc-b905-5e427d98dbfb.png') no-repeat center center fixed; /* Replace with your uploaded image */
+  background: url('images/d66b275c-b942-45fc-b905-5e427d98dbfb.png') no-repeat center center fixed; /* Updated with your uploaded image */
   background-size: cover;
   color: #f3efe6;
   line-height: 1.6;
@@ -29,24 +29,26 @@ html, body {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start; /* Align to the left */
   padding: 12px 0;
 }
 .brand {
   display: flex;
   align-items: center;
-  gap: 12px;
+  gap: 20px; /* Increased gap between logo and text */
 }
 .logo {
-  height: 46px;
+  height: 60px; /* Increased logo size */
 }
 .brand-name {
+  font-size: 32px; /* Increased the font size of the brand name */
   font-weight: 800;
   color: #f9e7c0;
 }
 .brand-tag {
-  font-size: 12px;
+  font-size: 20px; /* Increased the font size of the new slogan */
   color: #bfb6a7;
+  font-weight: 600;
 }
 .main-nav a {
   color: #efeadd;
