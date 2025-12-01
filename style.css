@@ -30,7 +30,7 @@ html, body {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align content to the left */
+  justify-content: flex-start; /* Align content to the left for logo and slogan */
   padding: 0; /* Remove padding to align content to the left */
   margin-left: 0; /* Ensure no margin on the left */
 }
@@ -42,7 +42,9 @@ html, body {
 }
 
 .logo {
-  height: 60px; /* Increased logo size */
+  height: 100px; /* Adjusted logo height */
+  width: 100px; /* Set width equal to height to make it square */
+  object-fit: contain;
 }
 
 .brand-name {
@@ -59,6 +61,10 @@ html, body {
 
 /* Updated Navigation Styling */
 .main-nav {
+  position: absolute; /* Ensure nav stays at the top */
+  top: 0;
+  left: 50%; /* Position the nav at the center */
+  transform: translateX(-50%); /* Correct centering by moving left by 50% of its own width */
   display: flex;
   justify-content: center; /* Center the navigation bar */
   width: 100%; /* Ensure the nav takes up the full width */
