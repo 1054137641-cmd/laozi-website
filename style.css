@@ -26,33 +26,46 @@ html, body {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.55), rgba(10, 8, 6, 0.4));
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
 }
+
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align to the left */
+  justify-content: flex-start; /* Align content to the left for logo and slogan */
   padding: 12px 0;
 }
+
 .brand {
   display: flex;
   align-items: center;
   gap: 20px; /* Increased gap between logo and text */
 }
+
 .logo {
   height: 60px; /* Increased logo size */
 }
+
 .brand-name {
-  font-size: 32px; /* Increased the font size of the brand name */
+  font-size: 32px; /* Increased font size of the brand name */
   font-weight: 800;
   color: #f9e7c0;
 }
+
 .brand-tag {
-  font-size: 20px; /* Increased the font size of the new slogan */
+  font-size: 20px; /* Increased font size of the new slogan */
   color: #bfb6a7;
   font-weight: 600;
 }
+
+/* Updated Navigation Styling */
+.main-nav {
+  display: flex;
+  justify-content: center; /* Center the navigation bar */
+  width: 100%; /* Ensure the nav takes up the full width */
+}
+
 .main-nav a {
   color: #efeadd;
-  margin-left: 18px;
+  margin: 0 30px; /* Increased margin between each nav item */
   text-decoration: none;
   font-weight: 600;
 }
