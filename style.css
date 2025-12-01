@@ -250,3 +250,81 @@ html, body {
   .main-nav { display:none; }
 
 }
+/* ======== HERO 强制结构修复（防止错位/拉伸/漂移） ======== */
+
+/* 整个 hero 强制回归中轴结构 */
+.hero {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding-top: 160px !important;
+}
+
+.hero-inner {
+  width: 100% !important;
+  display: flex !important;
+  justify-content: center !important;
+}
+
+.hero-text {
+  max-width: 1100px !important;
+  width: 100%;
+  text-align: center !important;
+  position: relative !important;
+}
+
+/* 防止任何巨大文字漂移 */
+.hero-title {
+  font-size: 72px !important;
+  margin: 0 0 24px 0 !important;
+  transform: none !important;
+  position: static !important;
+}
+
+/* 中段说明强制居中 */
+.hero-desc {
+  max-width: 900px !important;
+  margin: 0 auto 48px auto !important;
+  text-align: center !important;
+}
+
+/* 今日主题恢复为中部横排 */
+.hero-tags {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  gap: 22px !important;
+  margin-bottom: 56px !important;
+}
+
+/* 按钮强制横排 + 居中 */
+.hero-actions {
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+  flex-direction: row !important;
+  gap: 36px !important;
+  margin-top: 24px !important;
+}
+
+/* 防止按钮被拉成竖条 */
+.hero-actions a {
+  width: auto !important;
+  height: auto !important;
+  min-width: 160px;
+}
+
+/* ======== LOGO 防炸补丁 ======== */
+.logo {
+  position: static !important;
+  transform: none !important;
+  width: auto !important;
+  height: 60px !important;
+}
+
+/* 防止任何绝对定位图片压屏 */
+.hero img {
+  position: static !important;
+  max-width: 100% !important;
+}
