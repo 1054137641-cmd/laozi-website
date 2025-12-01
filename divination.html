@@ -4,58 +4,92 @@
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
   <title>老子卦机 · Laozi Oracle</title>
-  <link rel="stylesheet" href="style.css"/>
+  <link rel="stylesheet" href="oracle-cosmic.css"/>
   <link rel="icon" href="assets/favicon.ico"/>
 </head>
-<body>
-  <header class="mini-header">
-    <div class="container">
-      <a href="index.html" class="back">← 返回首页</a>
-      <div class="page-title">老子卦机 2.0</div>
+<body class="oracle-body">
+
+  <!-- 顶部返回 -->
+  <header class="oracle-header">
+    <a href="index.html" class="oracle-back">← 返回首页</a>
+    <div class="oracle-title">
+      <div class="oracle-title-main">老子卦机 · Laozi Oracle</div>
+      <div class="oracle-title-sub">Chain Oracle · 天机已启</div>
     </div>
   </header>
 
-  <main class="container page-card">
-    <section class="card">
-      <h1>免费体验：老子卦机</h1>
-      <p>输入问题或选择“今日运势”，AI 将为你推演卦象并生成国风运势图（可分享到推特）。</p>
+  <!-- 宇宙背景层 -->
+  <div class="cosmic-bg"></div>
+  <div class="cosmic-particles"></div>
 
-      <label>请选择类型：</label>
-      <select id="gua-type">
-        <option value="today">今日运势</option>
-        <option value="trade">交易决策</option>
-        <option value="personal">个人币运</option>
-      </select>
+  <!-- 核心卦机区域 -->
+  <main class="oracle-wrapper">
 
-      <label>输入你想问的问题（可选）</label>
-      <input id="gua-question" type="text" placeholder="例如：ETH 今天能不能反弹？" />
+    <section class="oracle-panel">
 
-      <div style="margin-top:12px;">
-        <button class="btn btn-primary" id="run-gua">开一卦 / 生成图</button>
-        <button class="btn btn-ghost" id="sample-gua">示例卦象</button>
+      <div class="oracle-intro">
+        <h1>链上天机 · 今日可问</h1>
+        <p>此卦不问涨跌，只观人心；不看 K 线，只看天机。</p>
+        <p>当你犹豫时，卦象已动；当你起念时，趋势已成。</p>
       </div>
 
-      <div id="gua-result" class="gua-result" style="margin-top:18px;"></div>
-    </section>
-  </main>
+      <div class="oracle-form">
 
-  <footer class="site-footer"><div class="container">© 2025 Laozi</div></footer>
+        <div class="form-item">
+          <label>请选择卦象类型</label>
+          <select id="gua-type">
+            <option value="today">今日链运</option>
+            <option value="trade">交易决策</option>
+            <option value="personal">个人币运</option>
+          </select>
+        </div>
+
+        <div class="form-item">
+          <label>输入你心中所问（可空）</label>
+          <input id="gua-question" type="text" placeholder="例如：BTC 这波是诱多还是主升？" />
+        </div>
+
+        <div class="oracle-actions">
+          <button class="btn btn-primary cosmic-btn" id="run-gua">启动卦阵</button>
+          <button class="btn btn-ghost" id="sample-gua">查看示例天机</button>
+        </div>
+
+      </div>
+
+      <!-- 卦象结果 -->
+      <div id="gua-result" class="oracle-result">
+        <div class="result-placeholder">卦未启 · 天机未显</div>
+      </div>
+
+      <div class="oracle-note">
+        卦象仅为链上情绪参考，真正的决策，仍需你自己承担因果。
+      </div>
+
+    </section>
+
+  </main>
 
 <script>
 const sampleTexts = [
-  "卦象：泰初有变。建议：轻仓观望，等待确认。",
-  "卦象：震动未止。建议：降低仓位，寻机而动。",
-  "卦象：天地合，短线有机，守候确认后再入。"
+  "卦象：乾中藏坎。天机：强中带险。\n建议：轻仓顺势，不可梭哈。",
+  "卦象：震动离散。天机：诱多之象。\n建议：高位不追，耐心等待。",
+  "卦象：地天泰。天机：情绪修复。\n建议：可小仓试探，设好止损。"
 ];
+
 document.getElementById('sample-gua')?.addEventListener('click', ()=>{
-  document.getElementById('gua-result').innerText = sampleTexts[Math.floor(Math.random()*sampleTexts.length)];
+  const box = document.getElementById('gua-result');
+  box.classList.add('active');
+  box.innerText = sampleTexts[Math.floor(Math.random()*sampleTexts.length)];
 });
+
 document.getElementById('run-gua')?.addEventListener('click', ()=>{
   const type = document.getElementById('gua-type').value;
-  const q = document.getElementById('gua-question').value || '今日运势';
-  document.getElementById('gua-result').innerText = `正在为您推演 —— 【${type}】 ${q}\n（示例）卦象：泰中带险。建议：小仓探入，止损严格。`;
-  // TODO: 这里可接后端 AI 生成/出图接口
+  const q = document.getElementById('gua-question').value || '今日链运';
+  const box = document.getElementById('gua-result');
+  box.classList.add('active');
+  box.innerText = `正在为您推演天机 —— 【${type}】\n你所问：${q}\n\n卦象：泰中带变。\n天机：情绪回暖但多空未明。\n建议：小仓试探 + 严格止损。`;
 });
 </script>
+
 </body>
 </html>
