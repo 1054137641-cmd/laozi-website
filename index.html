@@ -2,117 +2,107 @@
 <html lang="zh-CN">
 <head>
   <meta charset="utf-8"/>
-  <title>币安老子 · BinanceLaozi</title>
   <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>币安老子 · BinanceLaozi</title>
   <link rel="stylesheet" href="style.css"/>
-  <link rel="icon" href="assets/favicon.ico"/>
 </head>
 <body>
 
-<!-- 顶部导航 -->
 <header class="site-header">
   <div class="header-inner">
-    <div class="brand">
+
+    <!-- 左侧 Logo -->
+    <div class="brand-left">
       <img src="images/logo.png" class="logo">
-      <div>
-        <div class="brand-name">币安老子 · BinanceLaozi</div>
-        <div class="brand-tag">链上有变 · 天机自明</div>
-      </div>
     </div>
 
+    <!-- 中间品牌 -->
+    <div class="brand-center">
+      <div class="brand-title">币安老子 · BinanceLaozi</div>
+      <div class="brand-tagline">链上有变，天机自明</div>
+    </div>
+
+    <!-- 中间导航 -->
     <nav class="main-nav">
       <a href="#hero">首页</a>
       <a href="#oracle">卦机</a>
       <a href="#about">关于</a>
       <a href="#roadmap">路线图</a>
       <a href="#airdrop">空投</a>
-      <a href="#contact">社群</a>
     </nav>
+
   </div>
 </header>
 
-<!-- 第一屏：品牌主视觉 -->
-<section id="hero" class="section hero full-screen">
-  <div class="hero-inner">
+<!-- 第一屏 -->
+<section id="hero" class="screen hero">
+  <div class="hero-content">
     <h1>币安老子 <span>$LAOZI</span></h1>
-    <p>东方玄学 × Web3 Meme × 链上天机</p>
+    <p class="hero-subtitle">东方玄学 × Meme × 链上资产协议</p>
 
-    <div class="hero-btns">
-      <a href="divination.html" class="btn btn-primary">立即开卦</a>
-      <a href="#airdrop" class="btn">参与空投</a>
-      <a href="https://t.me/Binance_LaoZi" class="btn">加入 TG</a>
+    <div class="hero-desc">
+      <p>全球首个将「易经 + 玄学 + Meme + 空投机制」系统化的链上文化实验。</p>
+      <p>不是迷信，是数据；不是预测，是趋势。</p>
+      <p>跟道走，而不是被情绪牵着走。</p>
+    </div>
+
+    <div class="hero-buttons">
+      <a class="btn btn-primary" href="#oracle">立即开卦</a>
+      <a class="btn btn-outline" href="#airdrop">参与空投</a>
+      <a class="btn btn-ghost" href="https://t.me/Binance_LaoZi" target="_blank">加入 TG</a>
     </div>
   </div>
 </section>
 
-<!-- 第二屏：卦机专属入口 -->
-<section id="oracle" class="section">
+<!-- 第二屏：卦机 -->
+<section id="oracle" class="screen section">
   <h2>老子卦机 · Laozi Oracle</h2>
-  <p class="section-desc">AI + 易经，为你推演今日链上市运。</p>
+  <p class="section-desc">AI + 易经 + 链上数据，生成属于你的今日链运。</p>
 
-  <div class="oracle-box">
-    <img src="images/laozi.png">
-    <div class="oracle-text">
-      <p>每日免费测算 · 支持出图 · 支持分享</p>
-      <a href="divination.html" class="btn btn-primary">进入卦机</a>
-    </div>
+  <div class="oracle-flow">
+    <div class="flow-card">1️⃣ 输入问题或币种</div>
+    <div class="flow-card">2️⃣ AI 计算卦象</div>
+    <div class="flow-card">3️⃣ 生成运势图</div>
+    <div class="flow-card">4️⃣ 分享到社群传播</div>
   </div>
+
+  <a class="btn btn-primary" href="divination.html">进入卦机</a>
 </section>
 
-<!-- 第三屏：关于币安老子 -->
-<section id="about" class="section">
+<!-- 第三屏：关于 -->
+<section id="about" class="screen section">
   <h2>关于币安老子</h2>
-  <p class="section-desc">
-    $LAOZI 是首个以“东方道家玄学 + 链上 Meme 文化”为核心叙事的 Web3 社区项目。
-  </p>
 
   <div class="about-grid">
     <div class="about-card">
-      <h3>文化叙事</h3>
-      <p>用《道德经 + 卦象》解构币圈人性。</p>
+      <h3>项目愿景</h3>
+      <p>用东方文化解释链上世界。</p>
     </div>
     <div class="about-card">
-      <h3>UGC 裂变</h3>
-      <p>占卦结果可生成图片，自动传播。</p>
+      <h3>文化内核</h3>
+      <p>道、无为、顺势、反人性。</p>
     </div>
     <div class="about-card">
-      <h3>社区共建</h3>
-      <p>所有人都是老子体系的传播节点。</p>
+      <h3>玩法机制</h3>
+      <p>卦机 + 空投 + 社群 + Meme</p>
+    </div>
+    <div class="about-card">
+      <h3>代币逻辑</h3>
+      <p>文化共识 + 流量共识 = 价值共识</p>
     </div>
   </div>
 </section>
 
 <!-- 第四屏：路线图 -->
-<section id="roadmap" class="section">
+<section id="roadmap" class="screen section">
   <h2>路线图 Roadmap</h2>
-
-  <div class="roadmap-list">
-    <div class="rm active">Phase 1 · 卦机上线 ✅</div>
-    <div class="rm active">Phase 2 · 空投裂变 ✅</div>
-    <div class="rm">Phase 3 · CMC / NFT ⏳</div>
-    <div class="rm">Phase 4 · CEX 上线 ⏳</div>
+  <div class="roadmap-bar">
+    <div class="road-step active">卦机上线</div>
+    <div class="road-step">空投裂变</div>
+    <div class="road-step">NFT 神签</div>
+    <div class="road-step">CEX</div>
   </div>
 </section>
 
-<!-- 第五屏：空投 -->
-<section id="airdrop" class="section">
-  <h2>空投计划</h2>
-  <p class="section-desc">完成任务领取 $LAOZI</p>
-  <a href="airdrop.html" class="btn btn-primary">进入空投页面</a>
-</section>
-
-<!-- 第六屏：社群 & 联系 -->
-<section id="contact" class="section footer">
-  <h2>社群 & 联系</h2>
-
-  <p>TG：<a href="https://t.me/Binance_LaoZi">t.me/Binance_LaoZi</a></p>
-  <p>X：@BinanceLaozi</p>
-  <p>商务：biz@laozi.biz</p>
-
-  <div class="copyright">
-    © 2025 BinanceLaozi · Follow the Dao.
-  </div>
-</section>
-
-</body>
-</html>
+<!-- 第五屏：空投 + 联系 -->
+<section id="airdrop" class="screen section">
