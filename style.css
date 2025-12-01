@@ -1,249 +1,147 @@
-/* ================= RESET ================= */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{
+  font-family:"Noto Sans SC",sans-serif;
+  background:url('images/d66b275c-b942-45fc-b905-5e427d98dbfb.png') no-repeat center fixed;
+  background-size:cover;
+  color:#f5efdf;
 }
 
-html, body {
-  height: 100%;
-  font-family: "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
-  background: url('images/d66b275c-b942-45fc-b905-5e427d98dbfb.png') no-repeat center center fixed;
-  background-size: cover;
-  color: #f3efe6;
-  line-height: 1.9;
+.site-header{
+  position:fixed;
+  top:0;
+  width:100%;
+  background:rgba(0,0,0,0.45);
+  z-index:999;
 }
 
-/* ================= CONTAINER ================= */
-.container {
-  max-width: 1400px;
-  margin: 0 auto;
-  padding: 0 48px;
+.header-inner{
+  display:grid;
+  grid-template-columns:auto 1fr auto;
+  align-items:center;
+  padding:20px 60px;
 }
 
-/* ================= HEADER ================= */
-.site-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  z-index: 999;
-  background: linear-gradient(90deg, rgba(0,0,0,0.6), rgba(10,8,6,0.45));
-  border-bottom: 1px solid rgba(255,255,255,0.08);
+.logo{height:78px}
+
+.brand-center{
+  text-align:center;
 }
 
-.header-inner {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  padding: 24px 60px;
+.brand-title{
+  font-size:28px;
+  font-weight:900;
+  color:#f8e7bf;
 }
 
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 20px;
+.brand-tagline{
+  font-size:16px;
+  opacity:.8;
 }
 
-.logo {
-  height: 82px;
+.main-nav{
+  display:flex;
+  gap:42px;
 }
 
-.brand-name {
-  font-size: 32px;
-  font-weight: 900;
-  color: #f9e7c0;
+.main-nav a{
+  color:#fff;
+  text-decoration:none;
+  font-weight:700;
 }
 
-.brand-tag {
-  font-size: 18px;
-  color: #d6cdb6;
-  margin-top: 4px;
+.hero{
+  min-height:100vh;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  text-align:center;
+  padding-top:140px;
 }
 
-.main-nav {
-  display: flex;
-  gap: 48px;
+.hero-title{
+  font-size:64px;
+  font-weight:900;
+  margin-bottom:22px;
 }
 
-.main-nav a {
-  font-size: 18px;
-  font-weight: 700;
-  color: #efeadd;
-  text-decoration: none;
-  letter-spacing: 1px;
-  opacity: 0.88;
+.hero-subtitle{
+  font-size:22px;
+  margin-bottom:26px;
 }
 
-.main-nav a:hover {
-  opacity: 1;
+.hero-desc p{
+  font-size:18px;
+  margin-bottom:14px;
+  opacity:.9;
 }
 
-/* ================= HERO / 第一屏 ================= */
-.hero {
-  min-height: 100vh;
-  padding-top: 160px;
-  display: flex;
-  align-items: center;
+.hero-tags{
+  display:flex;
+  justify-content:center;
+  gap:20px;
+  margin:32px 0;
+  flex-wrap:wrap;
 }
 
-.hero-inner {
-  width: 100%;
-  text-align: center;
+.pill{
+  padding:12px 24px;
+  border-radius:999px;
+  background:rgba(255,255,255,.18);
+  font-size:14px;
 }
 
-.hero-title {
-  font-size: 72px;
-  font-weight: 900;
-  letter-spacing: 2px;
-  margin-bottom: 28px;
+.pill-strong{
+  background:#ffd98b;
+  color:#000;
 }
 
-.hero-sub {
-  font-size: 26px;
-  max-width: 980px;
-  margin: 0 auto 58px;
-  opacity: 0.92;
+.hero-actions{
+  display:flex;
+  justify-content:center;
+  gap:36px;
+  margin-top:36px;
 }
 
-.hero-tags {
-  display: flex;
-  gap: 24px;
-  justify-content: center;
-  margin-bottom: 56px;
-  flex-wrap: wrap;
+.btn{
+  padding:16px 40px;
+  border-radius:999px;
+  font-weight:800;
+  text-decoration:none;
 }
 
-.hero-tag {
-  padding: 14px 30px;
-  font-size: 16px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.1);
+.btn-primary{
+  background:#ffd98b;
+  color:#111;
 }
 
-.hero-ctas {
-  display: flex;
-  gap: 34px;
-  justify-content: center;
+.btn-outline{
+  border:2px solid #fff;
+  color:#fff;
 }
 
-.btn {
-  padding: 20px 44px;
-  font-size: 18px;
-  font-weight: 800;
-  border-radius: 999px;
-  text-decoration: none;
-  transition: 0.3s;
+.btn-ghost{
+  border:1px dashed #fff;
+  color:#fff;
 }
 
-.btn-primary {
-  background: linear-gradient(90deg,#e0b36b,#ffd88a);
-  color: #111;
+.section{
+  min-height:100vh;
+  padding:160px 10%;
+  text-align:center;
 }
 
-.btn-outline {
-  border: 2px solid rgba(255,255,255,0.35);
-  color: #fff;
+.section h2{
+  font-size:48px;
+  margin-bottom:28px;
 }
 
-/* ================= 统一 Section 放大规则（2-5 屏生效） ================= */
-section {
-  padding: 160px 0;
+.section p{
+  font-size:20px;
+  opacity:.85;
 }
 
-section h2 {
-  font-size: 56px;
-  text-align: center;
-  margin-bottom: 90px;
-  letter-spacing: 2px;
-}
-
-section h3 {
-  font-size: 30px;
-  margin-bottom: 20px;
-}
-
-section p {
-  font-size: 20px;
-  max-width: 980px;
-  margin: 0 auto 26px;
-  text-align: center;
-  opacity: 0.92;
-}
-
-/* ================= 卡片统一放大（路线图 / 空投 / 世界观 / 步骤） ================= */
-.card,
-.phase-card,
-.feature-card,
-.step-card {
-  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
-  border-radius: 26px;
-  padding: 48px;
-  border: 1px solid rgba(255,255,255,0.12);
-  backdrop-filter: blur(10px);
-  transition: 0.3s;
-}
-
-.card:hover {
-  transform: translateY(-6px);
-}
-
-/* ================= 路线图专属放大 ================= */
-.roadmap-grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 48px;
-}
-
-.roadmap-grid h4 {
-  font-size: 26px;
-  margin-bottom: 16px;
-}
-
-.progress-bar {
-  height: 6px;
-  background: rgba(255,255,255,0.2);
-  border-radius: 999px;
-  overflow: hidden;
-  margin-top: 18px;
-}
-
-.progress-bar span {
-  display: block;
-  height: 100%;
-  background: linear-gradient(90deg,#e0b36b,#ffd88a);
-}
-
-/* ================= Airdrop / 社群 ================= */
-.airdrop-grid,
-.contact-grid {
-  display: grid;
-  grid-template-columns: repeat(3,1fr);
-  gap: 44px;
-}
-
-/* ================= Footer ================= */
-.site-footer {
-  padding: 80px 0;
-  text-align: center;
-  font-size: 16px;
-  color: #c9c0aa;
-  border-top: 1px solid rgba(255,255,255,0.1);
-}
-
-/* ================= 响应式 ================= */
-@media (max-width: 980px) {
-
-  .hero-title { font-size: 44px; }
-  .hero-sub { font-size: 18px; }
-
-  section h2 { font-size: 36px; }
-
-  .main-nav { display:none; }
-
-  .roadmap-grid,
-  .airdrop-grid,
-  .contact-grid {
-    grid-template-columns: 1fr;
-  }
-
+.site-footer{
+  padding:60px 0;
+  text-align:center;
+  border-top:1px solid rgba(255,255,255,.2);
 }
