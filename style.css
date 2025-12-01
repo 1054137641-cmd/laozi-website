@@ -1,7 +1,5 @@
-/* Reset */
-*,
-*::before,
-*::after {
+/* ================= RESET ================= */
+* {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -9,573 +7,243 @@
 
 html, body {
   height: 100%;
-}
-
-body {
   font-family: "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
-  background: url("images/d66b275c-b942-45fc-b905-5e427d98dbfb.png") no-repeat center center fixed;
+  background: url('images/d66b275c-b942-45fc-b905-5e427d98dbfb.png') no-repeat center center fixed;
   background-size: cover;
-  color: #f4f1e8;
-  line-height: 1.6;
+  color: #f3efe6;
+  line-height: 1.9;
 }
 
-/* 通用容器 */
-.section-inner {
-  max-width: 1100px;
+/* ================= CONTAINER ================= */
+.container {
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 0 20px;
+  padding: 0 48px;
 }
 
-/* 顶部导航 */
+/* ================= HEADER ================= */
 .site-header {
   position: fixed;
   top: 0;
-  left: 0;
-  right: 0;
-  z-index: 100;
-  background: linear-gradient(180deg, rgba(3,3,6,0.85), rgba(3,3,6,0.6));
-  backdrop-filter: blur(10px);
-  border-bottom: 1px solid rgba(255,255,255,0.05);
+  width: 100%;
+  z-index: 999;
+  background: linear-gradient(90deg, rgba(0,0,0,0.6), rgba(10,8,6,0.45));
+  border-bottom: 1px solid rgba(255,255,255,0.08);
 }
 
 .header-inner {
-  max-width: 1200px;
-  margin: 0 auto;
-  height: 76px;
-  display: flex;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   align-items: center;
-  justify-content: center;
-  position: relative;
+  padding: 24px 60px;
 }
 
-/* 左侧 logo */
-.brand-left {
-  position: absolute;
-  left: 24px;
+.brand {
   display: flex;
   align-items: center;
-}
-
-.logo-link {
-  display: inline-flex;
-  align-items: center;
+  gap: 20px;
 }
 
 .logo {
-  height: 48px;
+  height: 82px;
 }
 
-/* 中间标题 */
-.brand-center {
-  text-align: center;
+.brand-name {
+  font-size: 32px;
+  font-weight: 900;
+  color: #f9e7c0;
 }
 
-.brand-title {
-  font-size: 22px;
-  font-weight: 800;
+.brand-tag {
+  font-size: 18px;
+  color: #d6cdb6;
+  margin-top: 4px;
 }
 
-.brand-tagline {
-  font-size: 13px;
-  color: #e9d7a2;
-  margin-top: 2px;
-}
-
-/* 右侧导航 */
 .main-nav {
-  position: absolute;
-  right: 24px;
   display: flex;
-  gap: 26px;
-  font-size: 14px;
+  gap: 48px;
 }
 
 .main-nav a {
-  color: #fdf7e8;
+  font-size: 18px;
+  font-weight: 700;
+  color: #efeadd;
   text-decoration: none;
-  font-weight: 600;
-  opacity: 0.92;
+  letter-spacing: 1px;
+  opacity: 0.88;
 }
 
 .main-nav a:hover {
   opacity: 1;
-  text-shadow: 0 0 6px rgba(255, 238, 180, 0.9);
 }
 
-/* 共用按钮 */
-.btn {
-  display: inline-block;
-  padding: 10px 22px;
-  border-radius: 999px;
-  border: 1px solid rgba(255, 221, 140, 0.85);
-  background: transparent;
-  color: #fdf6df;
-  font-weight: 700;
-  font-size: 14px;
-  text-decoration: none;
-  cursor: pointer;
-  transition: all 0.2s ease;
-}
-
-.btn:hover {
-  transform: translateY(-1px);
-  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.45);
-}
-
-.btn-primary {
-  background: linear-gradient(90deg, #f7c76a, #ffe29a);
-  color: #271706;
-  border-color: transparent;
-}
-
-.btn-primary:hover {
-  filter: brightness(1.02);
-}
-
-.btn-outline {
-  background: rgba(0,0,0,0.25);
-}
-
-.btn-ghost {
-  background: transparent;
-  border-color: rgba(255,255,255,0.3);
-}
-
-.btn-lg {
-  padding: 12px 30px;
-}
-
-/* 小胶囊标签 */
-.pill {
-  display: inline-flex;
-  align-items: center;
-  padding: 6px 14px;
-  border-radius: 999px;
-  background: rgba(0, 0, 0, 0.45);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  font-size: 12px;
-}
-
-.pill-strong {
-  background: rgba(243, 193, 96, 0.95);
-  color: #22140a;
-  border: none;
-}
-
-/* 通用屏幕布局 */
-.screen {
+/* ================= HERO / 第一屏 ================= */
+.hero {
   min-height: 100vh;
-  padding-top: 120px;  /* 留出导航高度 */
-  padding-bottom: 90px;
+  padding-top: 160px;
   display: flex;
   align-items: center;
 }
 
-/* 第一屏：Hero */
 .hero-inner {
-  display: flex;
-  justify-content: flex-start;
-}
-
-.hero-text {
-  max-width: 620px;
-  padding-top: 40px;
+  width: 100%;
+  text-align: center;
 }
 
 .hero-title {
-  font-size: 46px;
-  letter-spacing: 1px;
-  margin-bottom: 8px;
+  font-size: 72px;
+  font-weight: 900;
+  letter-spacing: 2px;
+  margin-bottom: 28px;
 }
 
-.hero-title span {
-  color: #f6c46f;
-}
-
-.hero-subtitle {
-  font-size: 18px;
-  color: #f3e2b1;
-  margin-bottom: 18px;
-}
-
-.hero-desc p + p {
-  margin-top: 6px;
-  font-size: 14px;
-  color: #efe3c3;
+.hero-sub {
+  font-size: 26px;
+  max-width: 980px;
+  margin: 0 auto 58px;
+  opacity: 0.92;
 }
 
 .hero-tags {
   display: flex;
+  gap: 24px;
+  justify-content: center;
+  margin-bottom: 56px;
   flex-wrap: wrap;
-  gap: 8px;
-  margin: 18px 0;
 }
 
-.hero-actions {
+.hero-tag {
+  padding: 14px 30px;
+  font-size: 16px;
+  border-radius: 999px;
+  background: rgba(255,255,255,0.1);
+}
+
+.hero-ctas {
   display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin-top: 10px;
+  gap: 34px;
+  justify-content: center;
 }
 
-/* 通用 section 标题 */
-.section {
-  text-align: center;
-}
-
-.section-title {
-  font-size: 34px;
+.btn {
+  padding: 20px 44px;
+  font-size: 18px;
   font-weight: 800;
-  margin-bottom: 10px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.section-subtitle {
-  font-size: 15px;
-  color: #f1e2c4;
-  max-width: 720px;
-  margin: 0 auto 32px;
+.btn-primary {
+  background: linear-gradient(90deg,#e0b36b,#ffd88a);
+  color: #111;
 }
 
-/* 第二屏：卦机 */
-.section-oracle .section-inner {
-  text-align: left;
+.btn-outline {
+  border: 2px solid rgba(255,255,255,0.35);
+  color: #fff;
 }
 
-.oracle-layout {
+/* ================= 统一 Section 放大规则（2-5 屏生效） ================= */
+section {
+  padding: 160px 0;
+}
+
+section h2 {
+  font-size: 56px;
+  text-align: center;
+  margin-bottom: 90px;
+  letter-spacing: 2px;
+}
+
+section h3 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+section p {
+  font-size: 20px;
+  max-width: 980px;
+  margin: 0 auto 26px;
+  text-align: center;
+  opacity: 0.92;
+}
+
+/* ================= 卡片统一放大（路线图 / 空投 / 世界观 / 步骤） ================= */
+.card,
+.phase-card,
+.feature-card,
+.step-card {
+  background: linear-gradient(180deg, rgba(255,255,255,0.08), rgba(255,255,255,0.03));
+  border-radius: 26px;
+  padding: 48px;
+  border: 1px solid rgba(255,255,255,0.12);
+  backdrop-filter: blur(10px);
+  transition: 0.3s;
+}
+
+.card:hover {
+  transform: translateY(-6px);
+}
+
+/* ================= 路线图专属放大 ================= */
+.roadmap-grid {
   display: grid;
-  grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
-  gap: 28px;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 48px;
 }
 
-.oracle-left p {
-  font-size: 14px;
-  margin-bottom: 8px;
+.roadmap-grid h4 {
+  font-size: 26px;
+  margin-bottom: 16px;
 }
 
-.feature-list {
-  list-style: none;
-  margin-top: 12px;
-}
-
-.feature-list li {
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-
-.oracle-left .btn-lg {
+.progress-bar {
+  height: 6px;
+  background: rgba(255,255,255,0.2);
+  border-radius: 999px;
+  overflow: hidden;
   margin-top: 18px;
 }
 
-/* 卦机流程卡片 */
-.oracle-right {
-  background: rgba(0, 0, 0, 0.45);
-  border-radius: 18px;
-  padding: 18px 20px 20px;
-  border: 1px solid rgba(255,255,255,0.12);
-}
-
-.oracle-steps-title {
-  font-weight: 700;
-  margin-bottom: 10px;
-  font-size: 15px;
-}
-
-.oracle-steps {
-  display: flex;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.step-card {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  padding: 10px 12px;
-  border-radius: 12px;
-  background: rgba(11,11,12,0.7);
-}
-
-.step-index {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: #f7c76a;
-  color: #241506;
-  font-size: 13px;
-  font-weight: 800;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-shrink: 0;
-}
-
-.step-body h3 {
-  font-size: 14px;
-  margin-bottom: 4px;
-}
-
-.step-body p {
-  font-size: 12px;
-  color: #f6ebd0;
-}
-
-/* 第三屏：关于 */
-.section-about .section-inner {
-  text-align: left;
-}
-
-.about-columns {
-  display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-  gap: 20px;
-  margin-bottom: 26px;
-}
-
-.about-block h3 {
-  font-size: 18px;
-  margin-bottom: 8px;
-}
-
-.about-block p {
-  font-size: 14px;
-  margin-bottom: 6px;
-}
-
-.about-grid {
-  display: grid;
-  grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 18px;
-}
-
-.about-card {
-  background: rgba(0, 0, 0, 0.55);
-  padding: 14px 14px 16px;
-  border-radius: 14px;
-  border: 1px solid rgba(255,255,255,0.1);
-}
-
-.about-card h4 {
-  font-size: 15px;
-  margin-bottom: 6px;
-}
-
-.about-card p {
-  font-size: 13px;
-  color: #f5e6c3;
-}
-
-/* 第四屏：路线图 */
-.section-roadmap .section-inner {
-  text-align: left;
-}
-
-.roadmap-steps {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 18px;
-}
-
-.road-item {
-  background: rgba(0,0,0,0.55);
-  padding: 16px 16px 18px;
-  border-radius: 16px;
-  border: 1px solid rgba(255,255,255,0.12);
-}
-
-.road-phase {
-  font-size: 13px;
-  color: #f6d597;
-  margin-bottom: 4px;
-}
-
-.road-item h3 {
-  font-size: 16px;
-  margin-bottom: 6px;
-}
-
-.road-item p {
-  font-size: 13px;
-  color: #f7e7c4;
-}
-
-.road-item.active {
-  border-color: #f7c76a;
-  box-shadow: 0 0 18px rgba(247,199,106,0.25);
-}
-
-.road-item.done {
-  opacity: 0.96;
-}
-
-.road-progress {
-  margin-top: 10px;
-  width: 100%;
-  height: 6px;
-  border-radius: 999px;
-  background: rgba(255,255,255,0.08);
-  overflow: hidden;
-}
-
-.road-progress span {
+.progress-bar span {
   display: block;
   height: 100%;
-  border-radius: inherit;
-  background: linear-gradient(90deg, #f7c76a, #ffe7a6);
+  background: linear-gradient(90deg,#e0b36b,#ffd88a);
 }
 
-/* 第五屏：空投 & 加入我们 */
-.section-airdrop .section-inner {
-  text-align: left;
-}
-
-.airdrop-grid {
+/* ================= Airdrop / 社群 ================= */
+.airdrop-grid,
+.contact-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin-bottom: 24px;
+  grid-template-columns: repeat(3,1fr);
+  gap: 44px;
 }
 
-.airdrop-card {
-  background: rgba(0,0,0,0.55);
-  border-radius: 16px;
-  padding: 16px 16px 18px;
-  border: 1px solid rgba(255,255,255,0.12);
-}
-
-.airdrop-card h3 {
-  font-size: 16px;
-  margin-bottom: 8px;
-}
-
-.airdrop-card p {
-  font-size: 13px;
-  margin-bottom: 6px;
-}
-
-.step-list {
-  padding-left: 18px;
-  font-size: 13px;
-}
-
-.step-list li {
-  margin-bottom: 4px;
-}
-
-.airdrop-card a {
-  color: #8fc4ff;
-  text-decoration: none;
-}
-
-.airdrop-card a:hover {
-  text-decoration: underline;
-}
-
-.airdrop-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 6px;
-}
-
-/* Footer */
+/* ================= Footer ================= */
 .site-footer {
-  border-top: 1px solid rgba(255,255,255,0.08);
-  background: rgba(2,3,6,0.9);
-  padding: 14px 20px 10px;
-  font-size: 13px;
-}
-
-.footer-inner {
-  max-width: 1100px;
-  margin: 0 auto;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.footer-logo {
-  font-weight: 800;
-}
-
-.footer-slogan {
-  color: #f1ddac;
-  font-size: 12px;
-}
-
-.footer-right div + div {
-  margin-top: 4px;
-}
-
-.site-footer a {
-  color: #8fc4ff;
-  text-decoration: none;
-}
-
-.site-footer a:hover {
-  text-decoration: underline;
-}
-
-.footer-copy {
+  padding: 80px 0;
   text-align: center;
-  font-size: 12px;
-  margin-top: 8px;
-  color: #b6b0a0;
+  font-size: 16px;
+  color: #c9c0aa;
+  border-top: 1px solid rgba(255,255,255,0.1);
 }
 
-/* 响应式 */
+/* ================= 响应式 ================= */
 @media (max-width: 980px) {
 
-  .header-inner {
-    justify-content: flex-start;
-    padding: 0 14px;
-  }
+  .hero-title { font-size: 44px; }
+  .hero-sub { font-size: 18px; }
 
-  .brand-center {
-    margin-left: 64px;
-    text-align: left;
-  }
+  section h2 { font-size: 36px; }
 
-  .main-nav {
-    display: none; /* 小屏先隐藏导航，后续可以做汉堡菜单 */
-  }
+  .main-nav { display:none; }
 
-  .screen {
-    padding-top: 110px;
-    padding-bottom: 70px;
-  }
-
-  .hero-text {
-    padding-top: 10px;
-  }
-
-  .oracle-layout,
-  .about-columns,
-  .roadmap-steps,
+  .roadmap-grid,
   .airdrop-grid,
-  .about-grid {
+  .contact-grid {
     grid-template-columns: 1fr;
   }
 
-  .hero-title {
-    font-size: 34px;
-  }
-
-  .section-title {
-    font-size: 28px;
-    text-align: left;
-  }
-
-  .section-subtitle {
-    text-align: left;
-  }
-
-  .site-footer {
-    padding: 14px 14px;
-  }
-
-  .footer-inner {
-    flex-direction: column;
-    align-items: flex-start;
-  }
 }
