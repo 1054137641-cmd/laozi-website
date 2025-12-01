@@ -8,7 +8,7 @@
 html, body {
   height: 100%;
   font-family: "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
-  background: url('images/d66b275c-b942-45fc-b905-5e427d98dbfb.png') no-repeat center center fixed; /* Updated with your uploaded image */
+  background: url('images/d66b275c-b942-45fc-b905-5e427d98dbfb.png') no-repeat center center fixed; /* Background image */
   background-size: cover;
   color: #f3efe6;
   line-height: 1.6;
@@ -30,14 +30,15 @@ html, body {
 .header-inner {
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align content to the left for logo and slogan */
-  padding: 12px 0;
+  justify-content: flex-start; /* Align content to the left */
+  padding: 0; /* Remove padding to align content to the left */
+  margin-left: 0; /* Ensure no margin on the left */
 }
 
 .brand {
   display: flex;
   align-items: center;
-  gap: 20px; /* Increased gap between logo and text */
+  gap: 20px; /* Adjust the gap between logo and text */
 }
 
 .logo {
@@ -45,13 +46,13 @@ html, body {
 }
 
 .brand-name {
-  font-size: 32px; /* Increased font size of the brand name */
+  font-size: 32px; /* Increased the font size of the brand name */
   font-weight: 800;
   color: #f9e7c0;
 }
 
 .brand-tag {
-  font-size: 20px; /* Increased font size of the new slogan */
+  font-size: 20px; /* Increased the font size of the new slogan */
   color: #bfb6a7;
   font-weight: 600;
 }
