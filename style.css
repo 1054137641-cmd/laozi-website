@@ -25,6 +25,7 @@ html, body {
 .site-header {
   background: linear-gradient(90deg, rgba(0, 0, 0, 0.55), rgba(10, 8, 6, 0.4));
   border-bottom: 1px solid rgba(255, 255, 255, 0.03);
+  padding-top: 30px; /* Added padding to move the nav down */
 }
 
 .header-inner {
@@ -68,6 +69,7 @@ html, body {
   display: flex;
   justify-content: center; /* Center the navigation bar */
   width: 100%; /* Ensure the nav takes up the full width */
+  margin-top: 50px; /* Adjust the space between the header and nav */
 }
 
 .main-nav a {
