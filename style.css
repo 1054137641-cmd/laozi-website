@@ -1,108 +1,171 @@
-*{margin:0;padding:0;box-sizing:border-box;}
 body{
-  font-family:"Noto Sans SC",Arial;
-  background:url(images/d66b275c-b942-45fc-b905-5e427d98dbfb.png) no-repeat center center fixed;
+  margin:0;
+  font-family:"Noto Sans SC";
+  background:url('images/d66b275c-b942-45fc-b905-5e427d98dbfb.png') no-repeat center fixed;
   background-size:cover;
-  color:#f3efe6;
+  color:#fff;
 }
 
 /* 顶部 */
 .site-header{
   position:fixed;
-  width:100%;
   top:0;
-  z-index:100;
-  background:rgba(0,0,0,0.55);
+  width:100%;
+  background:rgba(0,0,0,0.4);
+  backdrop-filter:blur(8px);
+  z-index:99;
 }
+
 .header-inner{
+  position:relative;
+  height:90px;
   display:flex;
-  justify-content:space-between;
   align-items:center;
-  padding:20px 40px;
+  justify-content:center;
 }
-.logo{height:90px;}
-.brand-name{font-size:30px;}
-.brand-tag{font-size:18px;color:#c9b47a;}
+
+.brand-left{
+  position:absolute;
+  left:24px;
+}
+
+.logo{
+  height:70px;
+}
+
+.brand-center{
+  text-align:center;
+}
+
+.brand-title{
+  font-size:28px;
+  font-weight:800;
+}
+
+.brand-tagline{
+  font-size:14px;
+  opacity:0.8;
+}
 
 .main-nav{
-  display:flex;
-  gap:40px;
+  position:absolute;
+  bottom:10px;
 }
+
 .main-nav a{
   color:#fff;
+  margin:0 24px;
   text-decoration:none;
   font-weight:600;
 }
 
-/* 全屏模块 */
-.section{
+/* 通用屏幕 */
+.screen{
   min-height:100vh;
-  padding-top:140px;
   display:flex;
   flex-direction:column;
-  align-items:center;
   justify-content:center;
+  padding:120px 10%;
+}
+
+.section{
   text-align:center;
 }
 
+.section h2{
+  font-size:42px;
+  margin-bottom:20px;
+}
+
+.section-desc{
+  max-width:800px;
+  margin:0 auto 40px;
+  opacity:0.85;
+}
+
 /* Hero */
-.hero h1{font-size:60px;}
-.hero span{color:#f6c46d;}
-.hero-btns{margin-top:24px;display:flex;gap:18px;}
-
-.btn{
-  padding:12px 28px;
-  border-radius:12px;
-  border:1px solid #f6c46d;
-  color:#fff;
-  text-decoration:none;
-}
-.btn-primary{
-  background:#f6c46d;
-  color:#000;
+.hero h1{
+  font-size:64px;
 }
 
-/* 卦机 */
-.oracle-box{
+.hero span{
+  color:#f5c77a;
+}
+
+.hero-buttons a{
+  margin:12px;
+}
+
+/* 卦机流程 */
+.oracle-flow{
   display:flex;
-  gap:40px;
-  align-items:center;
+  justify-content:center;
+  gap:24px;
+  flex-wrap:wrap;
 }
-.oracle-box img{
-  width:260px;
+
+.flow-card{
+  padding:20px 28px;
+  border:1px solid rgba(255,255,255,0.2);
+  border-radius:12px;
+  background:rgba(0,0,0,0.4);
 }
 
 /* 关于 */
 .about-grid{
   display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:30px;
-  margin-top:40px;
+  grid-template-columns:repeat(4,1fr);
+  gap:24px;
 }
+
 .about-card{
-  background:rgba(0,0,0,0.6);
   padding:24px;
-  border-radius:18px;
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:14px;
+  background:rgba(0,0,0,0.4);
 }
 
 /* 路线图 */
-.roadmap-list{
-  margin-top:40px;
+.roadmap-bar{
   display:flex;
-  flex-direction:column;
-  gap:16px;
-}
-.rm{
-  padding:14px 28px;
-  border:1px solid #666;
-}
-.rm.active{
-  border-color:#f6c46d;
-  color:#f6c46d;
+  justify-content:center;
+  gap:24px;
 }
 
-/* 底部 */
-.footer{
-  background:rgba(0,0,0,.7);
+.road-step{
+  padding:16px 28px;
+  border-radius:999px;
+  border:1px solid rgba(255,255,255,0.3);
 }
-.footer a{color:#6fa8ff;}
+
+.road-step.active{
+  background:gold;
+  color:#000;
+}
+
+/* 联系 */
+.contact-box{
+  margin-top:30px;
+  font-size:18px;
+}
+
+/* 按钮 */
+.btn{
+  padding:12px 28px;
+  border-radius:999px;
+  text-decoration:none;
+}
+
+.btn-primary{
+  background:gold;
+  color:black;
+}
+
+.btn-outline{
+  border:1px solid #fff;
+  color:#fff;
+}
+
+.btn-ghost{
+  color:#fff;
+}
