@@ -238,3 +238,36 @@ body {
   padding: 18px 20px 12px;
   font-size: 13px;
 }
+.hero-structure {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 26px;
+}
+
+.hero-top { margin-top: -12px; }
+
+.hero-title { font-size: 52px; }
+
+.hero-subtitle { font-size: 20px; }
+
+.hero-middle {
+  max-width: 620px;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.hero-question {
+  margin-top: 16px;
+  font-size: 16px;
+  color: #ffe29a;
+}
+
+.hero-bottom { margin-top: 8px; }
+
+.btn-main {
+  padding: 12px 34px;
+  font-size: 15px;
+  font-weight: 800;
+  box-shadow: 0 0 20px rgba(247,199,106,0.35);
+}
