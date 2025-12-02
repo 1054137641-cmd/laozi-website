@@ -311,3 +311,127 @@ body {
     flex-direction: column;
   }
 }
+/* =========================
+   全站高级排版修复补丁 v1.0
+   直接粘贴即可生效
+========================= */
+
+/* 2–5 屏基础文字颜色恢复高级灰 */
+.section:not(.hero) {
+  color: #e6e2d6;
+}
+
+/* 所有板块标题强化 */
+.section-title {
+  color: #f6d897;
+  letter-spacing: 1px;
+  margin-bottom: 18px;
+}
+
+/* 副标题呼吸 */
+.section-subtitle {
+  line-height: 1.9;
+  opacity: 0.88;
+  margin-bottom: 60px;
+}
+
+/* 正文段落通用策略 */
+.section p,
+.section li {
+  line-height: 2.1;
+  font-size: 15px;
+  margin-bottom: 14px;
+  color: #ddd6c3;
+}
+
+/* 所有内容横向展开，避免挤中间 */
+.section-inner {
+  padding-left: 80px;
+  padding-right: 80px;
+}
+
+/* 所有卡片类统一高级质感 */
+.about-card,
+.road-item,
+.airdrop-card,
+.oracle-right {
+  backdrop-filter: blur(12px);
+  padding: 32px;
+  border-radius: 18px;
+  border: 1px solid rgba(255,255,255,0.12);
+}
+
+/* 路线图阅读节奏 */
+.road-item h3 {
+  margin-bottom: 12px;
+}
+
+.road-item p {
+  opacity: 0.9;
+}
+
+/* 空投步骤行距 */
+.step-list li {
+  line-height: 2;
+}
+
+/* =========================
+   Hero 区域仪式感专属
+========================= */
+
+.hero-breath-block p {
+  margin-bottom: 14px;
+  line-height: 2;
+}
+
+.hero-quote {
+  font-size: 18px;
+  color: #f7c76a;
+  margin-top: 20px;
+  letter-spacing: 1px;
+}
+
+/* 今日三胶囊排列 */
+.hero-ritual {
+  margin-top: 36px;
+  gap: 14px;
+}
+
+/* 软金胶囊 */
+.pill-soft {
+  background: rgba(0,0,0,0.35);
+  border: 1px solid rgba(255,215,120,0.25);
+  color: #f1dfb0;
+}
+
+/* 金令级主按钮 */
+.btn-gold {
+  background: linear-gradient(90deg,#f7c76a,#ffe8a3);
+  color: #2b1b06;
+  font-weight: 900;
+  padding: 14px 36px;
+  box-shadow: 0 0 24px rgba(247,199,106,0.45);
+}
+
+.btn-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 36px rgba(247,199,106,0.6);
+}
+
+/* 次级按钮弱化 */
+.hero-commands .btn-outline,
+.hero-commands .btn-ghost {
+  opacity: 0.92;
+}
+
+/* 移动端自动呼吸适配 */
+@media (max-width: 980px) {
+  .section-inner {
+    padding-left: 24px;
+    padding-right: 24px;
+  }
+
+  .section-subtitle {
+    margin-bottom: 40px;
+  }
+}
