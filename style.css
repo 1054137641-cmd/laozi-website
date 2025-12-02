@@ -1,16 +1,22 @@
 /* Reset */
 *,
 *::before,
-*::after { box-sizing: border-box; margin: 0; padding: 0; }
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
 
-html, body { height: 100%; }
+html, body {
+  height: 100%;
+}
 
 body {
   font-family: "Noto Sans SC", "Helvetica Neue", Arial, sans-serif;
   background: url("images/d66b275c-b942-45fc-b905-5e427d98dbfb.png") no-repeat center center fixed;
   background-size: cover;
   color: #f4f1e8;
-  line-height: 1.7;
+  line-height: 1.6;
 }
 
 /* 通用容器 */
@@ -23,9 +29,11 @@ body {
 /* 顶部导航 */
 .site-header {
   position: fixed;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   z-index: 100;
-  background: linear-gradient(180deg, rgba(3,3,6,0.85), rgba(3,3,6,0.6));
+  background: linear-gradient(180deg, rgba(3,3,6,0.88), rgba(3,3,6,0.55));
   backdrop-filter: blur(10px);
   border-bottom: 1px solid rgba(255,255,255,0.05);
 }
@@ -33,241 +41,273 @@ body {
 .header-inner {
   max-width: 1200px;
   margin: 0 auto;
-  height: 76px;
+  height: 78px;
   display: flex;
   align-items: center;
   justify-content: center;
   position: relative;
 }
 
-.brand-left { position: absolute; left: 24px; display: flex; align-items: center; }
-.logo { height: 52px; }
+/* 左侧 logo */
+.brand-left {
+  position: absolute;
+  left: 24px;
+  display: flex;
+  align-items: center;
+}
 
-.brand-center { text-align: center; }
-.brand-title { font-size: 22px; font-weight: 800; }
-.brand-tagline { font-size: 13px; color: #e9d7a2; }
+.logo {
+  height: 56px;
+}
 
+/* 中间标题 */
+.brand-center {
+  text-align: center;
+}
+
+.brand-title {
+  font-size: 24px;
+  font-weight: 900;
+  letter-spacing: 1px;
+}
+
+.brand-tagline {
+  font-size: 13px;
+  color: #e9d7a2;
+  margin-top: 2px;
+  letter-spacing: 2px;
+}
+
+/* 右侧导航 */
 .main-nav {
   position: absolute;
   right: 24px;
   display: flex;
-  gap: 26px;
+  gap: 28px;
   font-size: 14px;
 }
 
 .main-nav a {
   color: #fdf7e8;
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 700;
+  opacity: 0.9;
 }
 
-/* 按钮 */
+.main-nav a:hover {
+  opacity: 1;
+  text-shadow: 0 0 8px rgba(255, 238, 180, 0.9);
+}
+
+/* 共用按钮 */
 .btn {
   display: inline-block;
-  padding: 11px 26px;
+  padding: 12px 26px;
   border-radius: 999px;
-  border: 1px solid rgba(255,221,140,0.85);
+  border: 1px solid rgba(255, 221, 140, 0.85);
   background: transparent;
   color: #fdf6df;
   font-weight: 700;
   font-size: 14px;
   text-decoration: none;
+  cursor: pointer;
+  transition: all 0.25s ease;
 }
 
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 26px rgba(0, 0, 0, 0.5);
+}
+
+/* 主按钮：金令 */
 .btn-primary {
-  background: linear-gradient(90deg, #f7c76a, #ffe29a);
+  background: linear-gradient(135deg, #f7c76a, #ffe29a);
   color: #271706;
-  border: none;
+  border-color: transparent;
+  font-size: 16px;
+  padding: 14px 36px;
+  box-shadow:
+    0 0 24px rgba(247,199,106,0.5),
+    0 12px 30px rgba(0,0,0,0.6);
 }
 
-.btn-outline { background: rgba(0,0,0,0.25); }
-.btn-ghost { border-color: rgba(255,255,255,0.3); }
+.btn-outline {
+  background: rgba(0,0,0,0.35);
+  opacity: 0.9;
+  transform: translateY(2px);
+}
 
-/* 胶囊标签 */
+.btn-ghost {
+  background: transparent;
+  border-color: rgba(255,255,255,0.25);
+  opacity: 0.75;
+  font-size: 13px;
+}
+
+/* 小胶囊标签（仪式感阵列） */
 .pill {
-  padding: 7px 16px;
+  display: inline-flex;
+  align-items: center;
+  padding: 8px 20px;
   border-radius: 999px;
-  background: rgba(0,0,0,0.45);
-  border: 1px solid rgba(255,255,255,0.12);
-  font-size: 12px;
+  background: rgba(0, 0, 0, 0.55);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  font-size: 13px;
+  letter-spacing: 0.6px;
+  backdrop-filter: blur(8px);
 }
 
 .pill-strong {
-  background: rgba(243,193,96,0.95);
+  background: linear-gradient(135deg, #f7c76a, #ffe29a);
   color: #22140a;
   border: none;
+  font-weight: 800;
+  font-size: 14px;
+  box-shadow: 0 0 22px rgba(247,199,106,0.5);
 }
 
-/* 屏幕 */
+/* ✅ 关键修复：所有屏不再垂直强居中 */
 .screen {
   min-height: 100vh;
-  padding-top: 120px;
-  padding-bottom: 90px;
+  padding-top: 140px;
+  padding-bottom: 120px;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
 }
 
-/* ========== 第一屏 Hero 最终结构 ========== */
-
-.hero-inner { display: flex; justify-content: flex-start; }
+/* 第一屏仍然视觉居中 */
+.hero-inner {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 70vh;
+}
 
 .hero-text {
   max-width: 640px;
-  padding-top: 10px;
+  padding-top: 30px;
 }
 
-/* 上：标题稍微上移 */
 .hero-title {
-  font-size: 48px;
+  font-size: 50px;
   letter-spacing: 1px;
   margin-bottom: 10px;
-  margin-top: -6px;
 }
 
-.hero-title span { color: #f6c46f; }
+.hero-title span {
+  color: #f6c46f;
+}
 
 .hero-subtitle {
-  font-size: 19px;
+  font-size: 20px;
   color: #f3e2b1;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
-/* 中：三段文案居中 */
-.hero-desc { margin-top: 14px; }
+/* ✅ 世界观文案“呼吸分段” */
+.hero-desc {
+  margin-top: 22px;
+  max-width: 560px;
+}
 
 .hero-desc p {
-  font-size: 14px;
-  color: #efe3c3;
-  line-height: 1.8;
-}
-
-.hero-desc p + p { margin-top: 10px; }
-
-/* 下：主题胶囊整体下移 */
-.hero-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 10px;
-  margin: 26px 0 0;
-}
-
-/* 下：按钮再整体略下移 */
-.hero-actions {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  margin-top: 22px;
-}
-
-/* ========== 通用 Section 放大（2–5 屏统一高级化） ========== */
-
-.section-title {
-  font-size: 38px;
-  font-weight: 800;
+  font-size: 16px;
+  line-height: 1.9;
+  letter-spacing: 0.4px;
+  color: #f3e9cc;
   margin-bottom: 14px;
 }
 
-.section-subtitle {
-  font-size: 16px;
-  color: #f1e2c4;
-  max-width: 760px;
-  margin: 0 auto 38px;
+.hero-desc p:first-child {
+  font-weight: 600;
+  color: #fff2c9;
 }
 
-/* 第二屏 卦机 */
-.oracle-layout {
+/* ✅ 仪式感胶囊阵列 */
+.hero-tags {
   display: grid;
-  grid-template-columns: 1.1fr 1.1fr;
-  gap: 36px;
+  grid-template-columns: repeat(3, auto);
+  gap: 12px;
+  margin: 26px 0 22px;
+  align-items: center;
 }
 
-.oracle-left p { font-size: 15px; margin-bottom: 10px; }
-
-.feature-list li {
-  font-size: 14px;
-  margin-bottom: 8px;
+/* ✅ 金令级按钮组 */
+.hero-actions {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-top: 28px;
 }
 
-.oracle-right {
-  background: rgba(0,0,0,0.45);
-  border-radius: 20px;
-  padding: 22px;
-}
+/* 第二-第五屏公共结构不改，只因为 .screen 已解决“挤中间”问题 */
 
-/* 第三屏 关于 */
-.about-columns { gap: 28px; }
-.about-block p { font-size: 15px; }
-
-.about-grid { gap: 22px; }
-
-.about-card {
-  background: rgba(0,0,0,0.55);
-  padding: 18px;
-  border-radius: 16px;
-}
-
-/* 第四屏 路线图 */
-.roadmap-steps { gap: 22px; }
-
-.road-item {
-  background: rgba(0,0,0,0.55);
-  padding: 18px;
-  border-radius: 18px;
-}
-
-.road-item h3 { font-size: 17px; }
-.road-item p { font-size: 14px; }
-
-/* 第五屏 空投 */
-.airdrop-grid { gap: 22px; }
-
-.airdrop-card {
-  background: rgba(0,0,0,0.55);
-  border-radius: 18px;
-  padding: 18px;
-}
-
-.airdrop-card h3 { font-size: 17px; }
-.airdrop-card p,
-.step-list { font-size: 14px; }
-
-/* Footer */
+/* Footer 保持 */
 .site-footer {
   border-top: 1px solid rgba(255,255,255,0.08);
   background: rgba(2,3,6,0.9);
   padding: 18px 20px 12px;
   font-size: 13px;
 }
-.hero-structure {
+
+.footer-inner {
+  max-width: 1100px;
+  margin: 0 auto;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  gap: 26px;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 20px;
 }
 
-.hero-top { margin-top: -12px; }
-
-.hero-title { font-size: 52px; }
-
-.hero-subtitle { font-size: 20px; }
-
-.hero-middle {
-  max-width: 620px;
-  font-size: 15px;
-  line-height: 1.9;
-}
-
-.hero-question {
-  margin-top: 16px;
-  font-size: 16px;
-  color: #ffe29a;
-}
-
-.hero-bottom { margin-top: 8px; }
-
-.btn-main {
-  padding: 12px 34px;
-  font-size: 15px;
+.footer-logo {
   font-weight: 800;
-  box-shadow: 0 0 20px rgba(247,199,106,0.35);
+}
+
+.footer-slogan {
+  color: #f1ddac;
+  font-size: 12px;
+}
+
+.footer-right div + div {
+  margin-top: 4px;
+}
+
+.site-footer a {
+  color: #8fc4ff;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+.footer-copy {
+  text-align: center;
+  font-size: 12px;
+  margin-top: 8px;
+  color: #b6b0a0;
+}
+
+/* 响应式 */
+@media (max-width: 980px) {
+  .main-nav { display: none; }
+
+  .hero-title { font-size: 34px; }
+
+  .screen {
+    padding-top: 120px;
+    padding-bottom: 80px;
+  }
+
+  .hero-inner {
+    min-height: auto;
+  }
+
+  .hero-tags {
+    grid-template-columns: 1fr;
+  }
+
+  .footer-inner {
+    flex-direction: column;
+  }
 }
